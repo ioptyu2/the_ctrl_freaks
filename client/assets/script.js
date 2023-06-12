@@ -57,6 +57,12 @@ const showQuestion = () => {
     let questionNo = currentQuestionIndex + 1;
     questionElement.textContent = `${questionNo}. ${currentQuestion.question}`;
 
+    currentQuestion.options.forEach(answer => {
+        const button = document.createElement("button");
+        button.innerHTML = answer.option;
+        button.classList.add("btn");
+        answerElement.appendChild(button);
+    })
 }
 
 const fetchQuestion = async () => {
