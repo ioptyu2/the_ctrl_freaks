@@ -8,7 +8,8 @@
           {"option": "Banking", "correct": false},
           {"option": "Manufacturing", "correct": false},
           {"option": "Farming", "correct": true}
-        ]
+        ],
+        "explanation": "Farming is a primary economic activity as it exploits natural resources."
       },
       {
         "id": 2,
@@ -18,7 +19,8 @@
           {"option": "Angel Falls", "correct": false},
           {"option": "Victoria Falls", "correct": true},
           {"option": "Iguazu Falls", "correct": false}
-        ]
+        ],
+        "explanation": "Victoria Falls is the largest waterfall in the world!"
       },
       {
         "id": 3,
@@ -28,7 +30,8 @@
           {"option": "Glacier", "correct": false},
           {"option": "Volcano", "correct": false},
           {"option": "Plateau", "correct": false}
-        ]
+        ],
+        "explanation": "A delta is created by the action of a river as it empties its water and sediment into another body of water."
       },
       {
         "id": 4,
@@ -38,7 +41,8 @@
           {"option": "Doctor", "correct": false},
           {"option": "Farmer", "correct": true},
           {"option": "Architect", "correct": false}
-        ]
+        ],
+        "explanation": "A farmer is an example of a primary sector job as they grow goods and extract materials from the ground."
       },
       {
         "id": 5,
@@ -48,7 +52,8 @@
           {"option": "Tornado", "correct": false},
           {"option": "Earthquake", "correct": true},
           {"option": "Volcanic eruption", "correct": false}
-        ]
+        ],
+        "explanation": "Earthquakes are a sudden release of energy from the Earth's crust and this causes seismic waves."
       },
       {
         "id": 6,
@@ -58,7 +63,8 @@
           {"option": "Deposition", "correct": false},
           {"option": "Abrasion", "correct": true},
           {"option": "Corrosion", "correct": false}
-        ]
+        ],
+        "explanation": "Abrasion is a type of coastal erosion which is caused by the action of waves."
       },
       {
         "id": 7,
@@ -68,7 +74,8 @@
           {"option": "Emigration", "correct": false},
           {"option": "Migration", "correct": true},
           {"option": "Integration", "correct": false}
-        ]
+        ],
+        "explanation": "Migration is the movement of people from one place to another."
       }
     ]
   }

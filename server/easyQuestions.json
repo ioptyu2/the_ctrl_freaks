@@ -8,7 +8,8 @@
           {"option": "Wind energy", "correct": false},
           {"option": "Fossil fuels", "correct": true},
           {"option": "Hydroelectric power", "correct": false}
-        ]
+        ],
+        "explanation": "Fossil fuels are not a renewable resource - they cannot be replenished in a short period of time."
       },
       {
         "id": 2,
@@ -18,7 +19,8 @@
           {"option": "Melbourne", "correct": false},
           {"option": "Canberra", "correct": true},
           {"option": "Perth", "correct": false}
-        ]
+        ],
+        "explanation": "The capital city of Australia is Canberra."
       },
       {
         "id": 3,
@@ -28,7 +30,8 @@
           {"option": "Indian Ocean", "correct": false},
           {"option": "Arctic Ocean", "correct": false},
           {"option": "Pacific Ocean", "correct": true}
-        ]
+        ],
+        "explanation": "The largest ocean in the world is the Pacific Ocean!"
       },
       {
         "id": 4,
@@ -38,7 +41,8 @@
           {"option": "Canada", "correct": false},
           {"option": "Russia", "correct": false},
           {"option": "Australia", "correct": true}
-        ]
+        ],
+        "explanation": "Australia is located below the equator, so it is located entirely in the Southern Hemisphere."
       },
       {
         "id": 5,
@@ -48,7 +52,8 @@
           {"option": "Northern and Southern hemispheres", "correct": true},
           {"option": "Tropics and Polar regions", "correct": false},
           {"option": "Western and Eastern hemispheres", "correct": false}
-        ]
+        ],
+        "explanation": "The equator is a circle of latitude that divides Earth into Northern and Southern Hemispheres"
       },
       {
         "id": 6,
@@ -58,7 +63,8 @@
           {"option": "Africa", "correct": false},
           {"option": "South America", "correct": false},
           {"option": "Asia", "correct": true}
-        ]
+        ],
+        "explanation":"Asia is the largest continent in the world!"
       }
     ]
   }

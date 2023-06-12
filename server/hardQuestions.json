@@ -8,7 +8,8 @@
           {"option": "Death rate", "correct": false},
           {"option": "Immigration rate", "correct": false},
           {"option": "Urbanization rate", "correct": true}
-        ]
+        ],
+        "explanation":"Urbanization rate does not influence population growth."
       },
       {
         "id": 2,
@@ -18,7 +19,8 @@
           {"option": "Political stability", "correct": false},
           {"option": "Access to education", "correct": false},
           {"option": "Conflict or war", "correct": true}
-        ]
+        ],
+        "explanation":"Conflict or war are push factors for migration."
       },
       {
         "id": 3,
@@ -28,17 +30,19 @@
           {"option": "Urbanization", "correct": false},
           {"option": "Globalization", "correct": true},
           {"option": "Colonization", "correct": false}
-        ]
+        ],
+        "explanation":"Globalization describes the process of spreading cultural traits from one place to another as it involves interaction and integration among people worldwide."
       },
       {
         "id": 4,
         "question": "Which of the following is a major factor contributing to urbanization?",
         "options": [
           {"option": "Rural-urban migration", "correct": true},
-          {"option": "Deindustrialization", "correct": false},
+          {"option": "De-industrialization", "correct": false},
           {"option": "Decreasing population growth", "correct": false},
           {"option": "Agricultural expansion", "correct": false}
-        ]
+        ],
+        "explanation":"Rural-urban migration contributes to urbanization."
       },
       {
         "id": 5,
@@ -48,7 +52,8 @@
           {"option": "Irrigation", "correct": false},
           {"option": "Deforestation", "correct": false},
           {"option": "Conservation", "correct": false}
-        ]
+        ],
+        "explanation":"Desalination is the process by which the dissolved mineral salts in seawater are removed, leaving freshwater."
       }
     ]
   }
