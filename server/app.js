@@ -5,27 +5,27 @@ const app = express()
 // const logger = require("./logger")
 // app.use(logger)
 
-const easy = require("./easyQuestions.json")
-const medium = require("./mediumQuestions.json")
-const hard = require("./hardQuestions.json")
-
-// app.use("/easyQuestions", express.json())
-// app.use("/mediumQuestions", express.json())
-// app.use("/hardQuestions", express.json())
+const questions = require("./questions.json")
 
 app.use(cors())
 app.use(express.json())
 
-app.get("/easyQuestions", (req, res) => {
-    res.send(easy)
+app.get("/questions", (req, res) => {
+    res.send(questions)
 })
 
-app.get("/mediumQuestions", (req, res) => {
-    res.send(medium)
+app.get("/questions/easy", (req, res) => {
+    res.send(questions.questions.filter(q => q.category === "easy"))
+  })
+
+app.get("/questions/intermediate", (req, res) => {
+    res.send(questions.questions.filter(q => q.category === "intermediate"))
+    res.send(questions)
 })
 
-app.get("/hardQuestions", (req, res) => {
-    res.send(hard)
+app.get("/questions/hard", (req, res) => {
+    res.send(questions.questions.filter(q => q.category === "hard"))
+    res.send(questions)
 })
 
 module.exports = app
