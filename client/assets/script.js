@@ -45,5 +45,23 @@ const questions = {
     ]
 }
 
+const questionElement = document.getElementById("question");
+const answerElement = document.querySelector("#answer-buttons");
+const nextButton = document.getElementById("next-btn");
+
+let score = 0;
+let currentQuestionIndex = 0;
+
+const showQuestion = () => {
+    let currentQuestion = questions.questions[currentQuestionIndex];
+    let questionNo = currentQuestionIndex + 1;
+    questionElement.textContent = `${questionNo}. ${currentQuestion.question}`;
+
+}
+
+const fetchQuestion = async () => {
+
+}
 
 
+showQuestion();
