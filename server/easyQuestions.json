@@ -1,0 +1,65 @@
+{
+    "questions": [
+      {
+        "id": 1,
+        "question": "Which of the following is NOT a renewable resource?",
+        "options": [
+          {"option": "Solar energy", "correct": false},
+          {"option": "Wind energy", "correct": false},
+          {"option": "Fossil fuels", "correct": true},
+          {"option": "Hydroelectric power", "correct": false}
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What is the capital city of Australia?",
+        "options": [
+          {"option": "Sydney", "correct": false},
+          {"option": "Melbourne", "correct": false},
+          {"option": "Canberra", "correct": true},
+          {"option": "Perth", "correct": false}
+        ]
+      },
+      {
+        "id": 3,
+        "question": "What is the largest ocean in the world?",
+        "options": [
+          {"option": "Atlantic Ocean", "correct": false},
+          {"option": "Indian Ocean", "correct": false},
+          {"option": "Arctic Ocean", "correct": false},
+          {"option": "Pacific Ocean", "correct": true}
+        ]
+      },
+      {
+        "id": 4,
+        "question": "Which of the following countries is located entirely in the Southern Hemisphere?",
+        "options": [
+          {"option": "United States", "correct": false},
+          {"option": "Canada", "correct": false},
+          {"option": "Russia", "correct": false},
+          {"option": "Australia", "correct": true}
+        ]
+      },
+      {
+        "id": 5,
+        "question": "The equator is an imaginary line that divides the Earth into:",
+        "options": [
+          {"option": "East and West hemispheres", "correct": false},
+          {"option": "Northern and Southern hemispheres", "correct": true},
+          {"option": "Tropics and Polar regions", "correct": false},
+          {"option": "Western and Eastern hemispheres", "correct": false}
+        ]
+      },
+      {
+        "id": 6,
+        "question": "Which of the following continents is the largest by land area?",
+        "options": [
+          {"option": "Europe", "correct": false},
+          {"option": "Africa", "correct": false},
+          {"option": "South America", "correct": false},
+          {"option": "Asia", "correct": true}
+        ]
+      }
+    ]
+  }
+  

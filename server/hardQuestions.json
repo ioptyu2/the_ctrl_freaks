@@ -1,0 +1,55 @@
+{
+    "questions": [
+      {
+        "id": 1,
+        "question": "Which of the following is NOT a factor that influences population growth?",
+        "options": [
+          {"option": "Birth rate", "correct": false},
+          {"option": "Death rate", "correct": false},
+          {"option": "Immigration rate", "correct": false},
+          {"option": "Urbanization rate", "correct": true}
+        ]
+      },
+      {
+        "id": 2,
+        "question": "Which of the following is a push factor for migration?",
+        "options": [
+          {"option": "Better job opportunities", "correct": false},
+          {"option": "Political stability", "correct": false},
+          {"option": "Access to education", "correct": false},
+          {"option": "Conflict or war", "correct": true}
+        ]
+      },
+      {
+        "id": 3,
+        "question": "What is the term used to describe the process of spreading cultural traits from one place to another?",
+        "options": [
+          {"option": "Assimilation", "correct": false},
+          {"option": "Urbanization", "correct": false},
+          {"option": "Globalization", "correct": true},
+          {"option": "Colonization", "correct": false}
+        ]
+      },
+      {
+        "id": 4,
+        "question": "Which of the following is a major factor contributing to urbanization?",
+        "options": [
+          {"option": "Rural-urban migration", "correct": true},
+          {"option": "Deindustrialization", "correct": false},
+          {"option": "Decreasing population growth", "correct": false},
+          {"option": "Agricultural expansion", "correct": false}
+        ]
+      },
+      {
+        "id": 5,
+        "question": "What is the term used to describe the process of turning saltwater into freshwater?",
+        "options": [
+          {"option": "Desalination", "correct": true},
+          {"option": "Irrigation", "correct": false},
+          {"option": "Deforestation", "correct": false},
+          {"option": "Conservation", "correct": false}
+        ]
+      }
+    ]
+  }
+  

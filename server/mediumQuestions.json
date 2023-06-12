@@ -1,0 +1,75 @@
+{
+    "questions": [
+      {
+        "id": 1,
+        "question": "Which of the following is an example of a primary economic activity?",
+        "options": [
+          {"option": "Retail sales", "correct": false},
+          {"option": "Banking", "correct": false},
+          {"option": "Manufacturing", "correct": false},
+          {"option": "Farming", "correct": true}
+        ]
+      },
+      {
+        "id": 2,
+        "question": "Which of the following is the largest waterfall in the world?",
+        "options": [
+          {"option": "Niagara Falls", "correct": false},
+          {"option": "Angel Falls", "correct": false},
+          {"option": "Victoria Falls", "correct": true},
+          {"option": "Iguazu Falls", "correct": false}
+        ]
+      },
+      {
+        "id": 3,
+        "question": "Which of the following is a landform created by the action of a river?",
+        "options": [
+          {"option": "Delta", "correct": true},
+          {"option": "Glacier", "correct": false},
+          {"option": "Volcano", "correct": false},
+          {"option": "Plateau", "correct": false}
+        ]
+      },
+      {
+        "id": 4,
+        "question": "Which of the following is an example of a primary sector job?",
+        "options": [
+          {"option": "Teacher", "correct": false},
+          {"option": "Doctor", "correct": false},
+          {"option": "Farmer", "correct": true},
+          {"option": "Architect", "correct": false}
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Which of the following natural disasters is characterized by a sudden release of energy in the Earth's crust, resulting in seismic waves?",
+        "options": [
+          {"option": "Hurricane", "correct": false},
+          {"option": "Tornado", "correct": false},
+          {"option": "Earthquake", "correct": true},
+          {"option": "Volcanic eruption", "correct": false}
+        ]
+      },
+      {
+        "id": 6,
+        "question": "What is the process of coastal erosion caused by the action of waves called?",
+        "options": [
+          {"option": "Weathering", "correct": false},
+          {"option": "Deposition", "correct": false},
+          {"option": "Abrasion", "correct": true},
+          {"option": "Corrosion", "correct": false}
+        ]
+      },
+      {
+        "id": 7,
+        "question": "What is the term used to describe the movement of people from one place to another?",
+        "options": [
+          {"option": "Immigration", "correct": false},
+          {"option": "Emigration", "correct": false},
+          {"option": "Migration", "correct": true},
+          {"option": "Integration", "correct": false}
+        ]
+      }
+    ]
+  }
+  
