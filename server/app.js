@@ -42,4 +42,9 @@ app.delete("/questions/delete/:id", (req, res) => {
     }
 })
 
+app.patch("questions/edit", (req, res) => {
+    questions.questions[req.body.id] = req.body
+    res.status(200)
+})
+
 module.exports = app
