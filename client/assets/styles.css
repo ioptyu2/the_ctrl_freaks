@@ -52,7 +52,7 @@ body {
 }
 
 .btn:hover {
-    background: #222;
+    background: #404040;
     color: #fff;
 
 }
@@ -72,9 +72,14 @@ body {
 }
 
 .correct {
-    background-color: green;
+    background-color: #7DCD85;
 }
 
 .incorrect {
-    background-color: red;
+    background-color: #FF8787;
+}
+
+#result {
+    display: flex;
+    justify-content: center;
 }
