@@ -1,0 +1,26 @@
+{
+  "name": "the_ctrl_freaks",
+  "version": "1.0.0",
+  "description": "## Installation & Usage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js",
+    "dev": "nodemon -L server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ioptyu2/the_ctrl_freaks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ioptyu2/the_ctrl_freaks/issues"
+  },
+  "homepage": "https://github.com/ioptyu2/the_ctrl_freaks#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
