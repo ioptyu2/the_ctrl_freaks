@@ -28,9 +28,9 @@ app.get("/questions/hard", (req, res) => {
     res.send(questions)
 })
 
-app.post("/questions/add/:question", (req, res) => {
-    questions.push(req.body)
-    req.statusCode(201).send(req.body)
+app.post("/questions/add", (req, res) => {
+    questions.questions.push(req.body)
+    res.status(201).send(req.body)
 })
 
 app.delete("/questions/delete/:id", (req, res) => {
