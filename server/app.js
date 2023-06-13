@@ -14,6 +14,10 @@ app.get("/questions", (req, res) => {
     res.send(questions.questions)
 })
 
+app.get("/questions/random", (req, res) => {
+    res.send(questions.questions)
+})
+
 app.get("/questions/easy", (req, res) => {
     res.send(questions.questions.filter(q => q.category === "easy"))
 })
