@@ -45,7 +45,7 @@ const showQuestion = () => {
 const selectAnswer = (e) => {
     const selectedBtn = e.target;
     const selectedOptionIndex = parseInt(selectedBtn.dataset.index); // Uses index data attribute
-    const currentQuestion = questionData.questions[currentQuestionIndex];
+    const currentQuestion = questionData[currentQuestionIndex];
     const selectedOption = currentQuestion.options[selectedOptionIndex];
 
     if (selectedOption.correct) {
@@ -67,13 +67,13 @@ const selectAnswer = (e) => {
 const nextBtn = () => {
     currentQuestionIndex++;
 
-    if (currentQuestionIndex < questionData.questions.length) {
+    if (currentQuestionIndex < questionData.length) {
         showQuestion();
         const nextButton = document.getElementById("next-btn");
         nextButton.disabled = true;
     } else {
         const resultElement = document.getElementById("result");
-        resultElement.innerHTML = `You scored ${score} out of ${questionData.questions.length}!`;
+        resultElement.innerHTML = `You scored ${score} out of ${questionData.length}!`;
 
         questionElement.style.display = "none";
         answerElement.style.display = "none";
