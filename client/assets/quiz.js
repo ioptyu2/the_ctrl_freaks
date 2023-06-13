@@ -26,7 +26,7 @@ const showQuestion = () => {
     answerElement.innerHTML = "";
 
     // Adds current question
-    const currentQuestion = questionData.questions[currentQuestionIndex];
+    const currentQuestion = questionData[currentQuestionIndex];
     console.log(currentQuestion);
     const questionNo = currentQuestionIndex + 1;
     questionElement.innerHTML = `${questionNo}. ${currentQuestion.question}`;
