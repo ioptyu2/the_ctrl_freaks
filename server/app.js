@@ -16,7 +16,7 @@ app.get("/questions", (req, res) => {
 
 app.get("/questions/easy", (req, res) => {
     res.send(questions.questions.filter(q => q.category === "easy"))
-  })
+})
 
 app.get("/questions/intermediate", (req, res) => {
     res.send(questions.questions.filter(q => q.category === "intermediate"))
