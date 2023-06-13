@@ -28,4 +28,18 @@ app.get("/questions/hard", (req, res) => {
     res.send(questions)
 })
 
+app.post("/questions/add/:question", (req, res) => {
+    questions.push(req.body)
+    req.statusCode(201).send(req.body)
+})
+
+app.delete("/questions/delete/:id", (req, res) => {
+    if(req.body > questions.questions.length){
+        res.status(404).send()
+    }else{
+        questions.questions.splice(req.body - 1, 1)
+        res.status(204).send()
+    }
+})
+
 module.exports = app
