@@ -1,4 +1,7 @@
 let checkboxes = document.querySelectorAll("input[type=checkbox]")
+const form = document.getElementById('addQuestionForm')
+let questionBank = {}
+let questionData = null
 
 checkboxes.forEach(function(checkbox) {
   checkbox.addEventListener("change", function() {
@@ -9,11 +12,6 @@ checkboxes.forEach(function(checkbox) {
     }
   })
 })
-
-const form = document.getElementById('addQuestionForm')
-let questionBank = {}
-
-let questionData = null
 
 form.addEventListener('submit', async function(e) {
     e.preventDefault()

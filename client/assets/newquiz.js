@@ -54,8 +54,8 @@ const showQuestion = () => {
     resultElement.textContent = "";
     playElement.innerHTML = "";
     textElement.innerHTML = "";
-    // inputElement.innerHTML = "";
-    // submitElement.innerHTML = "";
+    inputElement.innerHTML = "";
+    submitElement.innerHTML = "";
 
     //Shows buttons again after play again
     questionElement.style.display = "block";
