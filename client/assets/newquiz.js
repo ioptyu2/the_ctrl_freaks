@@ -3,6 +3,7 @@ const answerElement = document.querySelector("#answer-buttons");
 const nextButton = document.getElementById("next-btn");
 const resultElement = document.getElementById("result");
 const playElement = document.getElementById("play");
+const difficultyButton = document.getElementById("buttons");
 const textElement = document.getElementById("text");
 const inputElement = document.getElementById("input");
 const submitElement = document.getElementById("submit");
@@ -10,6 +11,7 @@ const submitElement = document.getElementById("submit");
 let questionData = null;
 let currentQuestionIndex = 0;
 let score = 0;
+let difficulty = "";
 let playerName = null;
 
 const backButton = document.createElement("button");
@@ -20,14 +22,25 @@ backButton.addEventListener("click", () => {
 });
 document.body.appendChild(backButton);
 
+const getRandomSample = (array, count) => {
+    const indices = [];
+    const result = new Array(count);
+    for (let i = 0; i < count; i++ ) {
+        let j = Math.floor(Math.random() * (array.length - i) + i);
+        result[i] = array[indices[j] === undefined ? j : indices[j]];
+        indices[j] = indices[i] === undefined ? i : indices[i];
+    }
+    return result;
+}
+
 async function fetchQuestions() {
     try {
-        const response = await fetch('http://localhost:3005/questions/easy');
+        const response = await fetch(`http://localhost:3005/questions/${difficulty}`);
         if (!response.ok) {
             console.log(`Error fetching JSON:`, response.status);
         }
         const data = await response.json();
-        questionData = data;
+        questionData = getRandomSample(data, 5);
         console.log(questionData);
     } catch (err) {
         console.log(err);
@@ -43,6 +56,11 @@ const showQuestion = () => {
     textElement.innerHTML = "";
     // inputElement.innerHTML = "";
     // submitElement.innerHTML = "";
+
+    //Shows buttons again after play again
+    questionElement.style.display = "block";
+    answerElement.style.display = "block";
+    nextButton.style.display = "block"
 
     // Adds current question
     const currentQuestion = questionData[currentQuestionIndex];
@@ -87,12 +105,10 @@ const selectAnswer = (e) => {
 const restartQuiz = () => {
     currentQuestionIndex = 0;
     score = 0;
-    showQuestion();
-    questionElement.style.display = "block";
-    answerElement.style.display = "block";
-    nextButton.style.display = "block";
+    difficultyButton.style.display = "block"
+    playElement.innerHTML = ""
+    resultElement.innerHTML = ""
 }
-
 
 const nextBtn = () => {
     currentQuestionIndex++;
@@ -106,7 +122,8 @@ const nextBtn = () => {
         playButton.textContent = "Play again?";
         playButton.setAttribute("id", "next-btn");
         playElement.appendChild(playButton);
-
+        playButton.style.display = "block"
+      
         textElement.innerHTML = `Would you like to submit your score?`;
 
         const nameInput = document.createElement("input");
@@ -130,6 +147,19 @@ const nextBtn = () => {
     }
 };
 
+const selectDifficulty = () => {
+    nextButton.style.display = "block";
+    difficultyButton.style.display = "none";
+    initQuiz();
+}
+
+//when difficulty button is clicked, store the difficulty for use in fetchQuestions
+difficultyButton.addEventListener("click", (e) => {
+    difficulty = e.target.id
+    selectDifficulty()
+})
+nextButton.style.display = "none"
+
 function submitScore(e) {
     e.preventDefault();
     playerName = document.getElementById("name-input").value;
@@ -139,10 +169,7 @@ function submitScore(e) {
     newUrl.searchParams.append("name", playerName);
     newUrl.searchParams.append("score", score);
     window.location.href = newUrl.href;
-
-    // window.location.href = `../client/scoreboard.html?name=${playerName}&score=${score}`;
 }
-
 
 nextButton.addEventListener("click", nextBtn);
 nextButton.disabled = true;
@@ -151,6 +178,3 @@ const initQuiz = async () => {
     await fetchQuestions();
     showQuestion();
 };
-
-initQuiz();
-
