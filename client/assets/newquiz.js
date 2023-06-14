@@ -9,6 +9,13 @@ let questionData = null;
 let currentQuestionIndex = 0;
 let score = 0;
 
+const backButton = document.createElement("button");
+backButton.textContent = "Back to Home";
+backButton.setAttribute("id", "next-btn");
+backButton.addEventListener("click", () => {
+    window.location.href = "../client/index.html";
+});
+document.body.appendChild(backButton);
 
 async function fetchQuestions() {
     try {
