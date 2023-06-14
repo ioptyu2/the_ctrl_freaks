@@ -1,7 +1,23 @@
-let checkboxes = document.querySelectorAll("input[type=checkbox]")
-const addForm = document.getElementById('addQuestionForm')
-let questionBank = {}
-let questionData = null
+let checkboxes = document.querySelectorAll("input[type=checkbox]");
+const addForm = document.getElementById('addQuestionForm');
+let questionBank = {};
+let questionData = null;
+const settingsButton = document.getElementById("buttons");
+let settings = "";
+
+addForm.style.display = "none";
+
+const selectSettings = () => {
+    // nextButton.style.display = "block";
+    // difficultyButton.style.display = "none";
+    // initQuiz();
+}
+
+settingsButton.addEventListener("click", (e) => {
+    settings = e.target.id
+    settingsButton.style.display = "none"
+    document.getElementById(`${settings}QuestionForm`).style.display = "block"
+})
 
 checkboxes.forEach(function(checkbox) {
   checkbox.addEventListener("change", function() {
