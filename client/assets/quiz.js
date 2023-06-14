@@ -2,14 +2,16 @@
 const questionElement = document.getElementById("question");
 const answerElement = document.querySelector("#answer-buttons");
 const nextButton = document.getElementById("next-btn");
+const difficultyButton = document.getElementById("buttons")
 let questionData = null;
 let currentQuestionIndex = 0;
 let score = 0;
+let difficulty = ""
 
 
 async function fetchQuestions() {
     try {
-        const response = await fetch('http://localhost:3005/questions');
+        const response = await fetch(`http://localhost:3005/questions/${difficulty}`);
         if (!response.ok) {
             console.log(`Error fetching JSON:`, response.status);
         }
@@ -45,7 +47,7 @@ const showQuestion = () => {
 const selectAnswer = (e) => {
     const selectedBtn = e.target;
     const selectedOptionIndex = parseInt(selectedBtn.dataset.index); // Uses index data attribute
-    const currentQuestion = questionData.questions[currentQuestionIndex];
+    const currentQuestion = questionData[currentQuestionIndex];
     const selectedOption = currentQuestion.options[selectedOptionIndex];
 
     if (selectedOption.correct) {
@@ -67,13 +69,13 @@ const selectAnswer = (e) => {
 const nextBtn = () => {
     currentQuestionIndex++;
 
-    if (currentQuestionIndex < questionData.questions.length) {
+    if (currentQuestionIndex < questionData.length) {
         showQuestion();
         const nextButton = document.getElementById("next-btn");
         nextButton.disabled = true;
     } else {
         const resultElement = document.getElementById("result");
-        resultElement.innerHTML = `You scored ${score} out of ${questionData.questions.length}!`;
+        resultElement.innerHTML = `You scored ${score} out of ${questionData.length}!`;
 
         questionElement.style.display = "none";
         answerElement.style.display = "none";
@@ -81,12 +83,24 @@ const nextBtn = () => {
     }
 };
 
+const selectDifficulty = () => {
+    nextButton.style.display = "block"
+    difficultyButton.style.display = "none"
+    initQuiz()
+}
+
+//when difficulty button is clicked, store the difficulty for use in fetchQuestions
+difficultyButton.addEventListener("click", (e) => {
+    difficulty = e.target.id
+    selectDifficulty()
+})
+
+nextButton.style.display = "none"
 nextButton.addEventListener("click", nextBtn);
 nextButton.disabled = true;
+
 
 const initQuiz = async () => {
     await fetchQuestions();
     showQuestion();
 };
-
-initQuiz();

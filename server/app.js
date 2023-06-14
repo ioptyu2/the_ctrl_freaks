@@ -1,6 +1,7 @@
 const cors = require("cors")
 const express = require("express")
 const app = express()
+const fs = require('fs')
 
 // const logger = require("./logger")
 // app.use(logger)
@@ -11,6 +12,10 @@ app.use(cors())
 app.use(express.json())
 
 app.get("/questions", (req, res) => {
+    res.send(questions.questions)
+})
+
+app.get("/questions/random", (req, res) => {
     res.send(questions.questions)
 })
 
@@ -30,7 +35,9 @@ app.get("/questions/hard", (req, res) => {
 
 app.post("/questions/add", (req, res) => {
     questions.questions.push(req.body)
-    res.status(201).send(req.body)
+    fs.writeFile('./questions.json', JSON.stringify(questions, null, 2), () => {
+        res.status(201).send(req.body);
+    })
 })
 
 app.delete("/questions/delete/:id", (req, res) => {
