@@ -8,6 +8,7 @@ const textElement = document.getElementById("text");
 const inputElement = document.getElementById("input");
 const submitElement = document.getElementById("submit");
 
+
 let questionData = null;
 let currentQuestionIndex = 0;
 let score = 0;
@@ -25,7 +26,7 @@ document.body.appendChild(backButton);
 const getRandomSample = (array, count) => {
     const indices = [];
     const result = new Array(count);
-    for (let i = 0; i < count; i++ ) {
+    for (let i = 0; i < count; i++) {
         let j = Math.floor(Math.random() * (array.length - i) + i);
         result[i] = array[indices[j] === undefined ? j : indices[j]];
         indices[j] = indices[i] === undefined ? i : indices[i];
@@ -54,8 +55,8 @@ const showQuestion = () => {
     resultElement.textContent = "";
     playElement.innerHTML = "";
     textElement.innerHTML = "";
-    // inputElement.innerHTML = "";
-    // submitElement.innerHTML = "";
+    inputElement.innerHTML = "";
+    submitElement.innerHTML = "";
 
     //Shows buttons again after play again
     questionElement.style.display = "block";
@@ -106,8 +107,12 @@ const restartQuiz = () => {
     currentQuestionIndex = 0;
     score = 0;
     difficultyButton.style.display = "block"
-    playElement.innerHTML = ""
-    resultElement.innerHTML = ""
+    playElement.innerHTML = "";
+    resultElement.innerHTML = "";
+    inputElement.innerHTML = "";
+    submitElement.innerHTML = "";
+    textElement.innerHTML = "";
+
 }
 
 const nextBtn = () => {
@@ -123,7 +128,7 @@ const nextBtn = () => {
         playButton.setAttribute("id", "next-btn");
         playElement.appendChild(playButton);
         playButton.style.display = "block"
-      
+
         textElement.innerHTML = `Would you like to submit your score?`;
 
         const nameInput = document.createElement("input");
@@ -160,15 +165,34 @@ difficultyButton.addEventListener("click", (e) => {
 })
 nextButton.style.display = "none"
 
-function submitScore(e) {
+async function submitScore(e) {
     e.preventDefault();
     playerName = document.getElementById("name-input").value;
     let newUrl = new URL('../client/scoreboard.html', window.location.href);
 
-    console.log(playerName);
-    newUrl.searchParams.append("name", playerName);
-    newUrl.searchParams.append("score", score);
-    window.location.href = newUrl.href;
+    const requestBody = { playerName, score };
+
+    fetch("http://localhost:3005/scores", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(requestBody)
+
+    }).then(response => {
+        if (!response.ok) {
+            console.log(`Error posting to scoreboard:`, response.status);
+        }
+
+        newUrl.searchParams.append("name", playerName);
+        newUrl.searchParams.append("score", score);
+        window.location.href = newUrl.href;
+
+    }).catch((err) => {
+        console.log(err);
+    })
+
+
 }
 
 nextButton.addEventListener("click", nextBtn);

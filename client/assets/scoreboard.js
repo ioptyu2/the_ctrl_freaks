@@ -1,20 +1,46 @@
+
 const scoreboardTable = document.getElementById("scoreboard");
 
-const urlParams = new URLSearchParams(window.location.search);
-const playerName = urlParams.get("name");
-const score = urlParams.get("score");
+async function fetchScores() {
+    fetch("http://localhost:3005/scores")
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Error fetching scores");
+            }
+            return response.json();
+        })
+        .then((data) => {
+            data.forEach((scoreData) => {
+                addRow(scoreData.playerName, scoreData.score);
+            });
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+}
 
-const newRow = document.createElement("tr");
-const tableBody = scoreboardTable.querySelector("tbody");
+function addRow(playerName, score) {
+    const newRow = document.createElement("tr");
 
-const playerNameCell = document.createElement("td");
-const scoreCell = document.createElement("td");
+    const playerNameCell = document.createElement("td");
+    const scoreCell = document.createElement("td");
 
-playerNameCell.textContent = playerName;
-scoreCell.textContent = score;
+    playerNameCell.textContent = playerName;
+    scoreCell.textContent = score;
 
-newRow.appendChild(playerNameCell);
-newRow.appendChild(scoreCell);
+    newRow.appendChild(playerNameCell);
+    newRow.appendChild(scoreCell);
 
-tableBody.appendChild(newRow);
+    scoreboardTable.querySelector("tbody").appendChild(newRow);
+}
+
+const backButton = document.createElement("button");
+backButton.textContent = "Back to Home";
+backButton.setAttribute("id", "next-btn");
+backButton.addEventListener("click", () => {
+    window.location.href = "../client/index.html";
+});
+document.body.appendChild(backButton);
+
+fetchScores();
 

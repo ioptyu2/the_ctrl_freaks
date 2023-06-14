@@ -7,6 +7,7 @@ const fs = require('fs')
 // app.use(logger)
 
 const questions = require("./questions.json")
+const scores = [];
 
 app.use(cors())
 app.use(express.json())
@@ -54,4 +55,14 @@ app.patch("questions/edit", (req, res) => {
     res.status(200)
 })
 
+app.post("/scores", (req, res) => {
+    scores.push(req.body);
+    res.sendStatus(201);
+});
+
+app.get("/scores", (req, res) => {
+    res.json(scores);
+});
+
 module.exports = app
+
