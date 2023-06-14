@@ -7,11 +7,11 @@
 
 * Clone or download the repo.
 
-### Installation
+### Usage
 
 * Open the terminal
-*
-*
+* Use git command `git clone` followed by the project URL 
+* Navigate to 
 
 ## Technologies
 
@@ -20,6 +20,8 @@
 * JavaScript
 
 ## Process
+
+* 
 
 ## Wins & Challenges
 
