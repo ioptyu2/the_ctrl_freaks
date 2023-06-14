@@ -1,5 +1,5 @@
 let checkboxes = document.querySelectorAll("input[type=checkbox]")
-const form = document.getElementById('addQuestionForm')
+const addForm = document.getElementById('addQuestionForm')
 let questionBank = {}
 let questionData = null
 
@@ -13,21 +13,21 @@ checkboxes.forEach(function(checkbox) {
   })
 })
 
-form.addEventListener('submit', async function(e) {
+addForm.addEventListener('submit', async function(e) {
     e.preventDefault()
     await fetchQuestions()
 
     let question = {
-        category: form.category.value,
+        category: addForm.category.value,
         id: questionData.length +1,  
-        question: form.question.value,
+        question: addForm.question.value,
         options: [
             { option: form.option1.value, correct: form.correct1.checked },
             { option: form.option2.value, correct: form.correct2.checked },
             { option: form.option3.value, correct: form.correct3.checked },
             { option: form.option4.value, correct: form.correct4.checked }
         ],
-        explanation: form.explanation.value
+        explanation: addForm.explanation.value
     }
     
     addQuestion(question)
