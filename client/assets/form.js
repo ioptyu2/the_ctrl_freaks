@@ -4,14 +4,7 @@ let questionBank = {};
 let questionData = null;
 const settingsButton = document.getElementById("buttons");
 let settings = "";
-
 addForm.style.display = "none";
-
-const selectSettings = () => {
-    // nextButton.style.display = "block";
-    // difficultyButton.style.display = "none";
-    // initQuiz();
-}
 
 settingsButton.addEventListener("click", (e) => {
     settings = e.target.id
