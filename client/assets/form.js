@@ -13,17 +13,15 @@ checkboxes.forEach(function(checkbox) {
 const form = document.getElementById('addQuestionForm')
 let questionBank = {}
 
-form.addEventListener('submit', function(e) {
-    e.preventDefault()
+let questionData = null
 
-    console.log(form.category.value)
-    console.log(form.question.value)
-    console.log(form.explanation.value)
-    console.log(form.option1.value)
+form.addEventListener('submit', async function(e) {
+    e.preventDefault()
+    await fetchQuestions()
 
     let question = {
         category: form.category.value,
-        id: Date.now(),  
+        id: questionData.length +1,  
         question: form.question.value,
         options: [
             { option: form.option1.value, correct: form.correct1.checked },
@@ -33,7 +31,7 @@ form.addEventListener('submit', function(e) {
         ],
         explanation: form.explanation.value
     }
-    console.log(question)
+    
     addQuestion(question)
     e.target.reset()
 })
@@ -56,5 +54,19 @@ async function addQuestion(question) {
         console.log(e)
     }
 }
+
+async function fetchQuestions() {
+    try {
+        const response = await fetch('http://localhost:3005/questions');
+        if (!response.ok) {
+            console.log(`Error fetching JSON:`, response.status);
+        }
+        const data = await response.json();
+        questionData = data;
+        console.log(questionData);
+    } catch (err) {
+        console.log(err);
+    }
+} 
 
 
