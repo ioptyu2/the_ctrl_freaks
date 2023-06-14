@@ -59,6 +59,7 @@ p {
 }
 
 .buttons button {
+    border-radius: 4px;
     margin-right: 10px;
     padding: 12px 24px;
     background-color: #333;
@@ -73,6 +74,7 @@ p {
 }
 
 .scoreboard-buttons button {
+    border-radius: 4px;
     padding: 12px 24px; 
     background-color: #333;
     color: #fff;

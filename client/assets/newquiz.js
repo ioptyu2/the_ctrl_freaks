@@ -1,4 +1,3 @@
-
 const questionElement = document.getElementById("question");
 const answerElement = document.querySelector("#answer-buttons");
 const nextButton = document.getElementById("next-btn");
@@ -19,6 +18,17 @@ backButton.addEventListener("click", () => {
 });
 document.body.appendChild(backButton);
 
+const getRandomSample = (array, count) => {
+    const indices = [];
+    const result = new Array(count);
+    for (let i = 0; i < count; i++ ) {
+        let j = Math.floor(Math.random() * (array.length - i) + i);
+        result[i] = array[indices[j] === undefined ? j : indices[j]];
+        indices[j] = indices[i] === undefined ? i : indices[i];
+    }
+    return result;
+}
+
 async function fetchQuestions() {
     try {
         const response = await fetch(`http://localhost:3005/questions/${difficulty}`);
@@ -26,7 +36,7 @@ async function fetchQuestions() {
             console.log(`Error fetching JSON:`, response.status);
         }
         const data = await response.json();
-        questionData = data;
+        questionData = getRandomSample(data, 5);
         console.log(questionData);
     } catch (err) {
         console.log(err);
@@ -39,6 +49,11 @@ const showQuestion = () => {
     answerElement.innerHTML = "";
     resultElement.textContent = "";
     playElement.innerHTML = "";
+
+    //Shows buttons again after play again
+    questionElement.style.display = "block";
+    answerElement.style.display = "block";
+    nextButton.style.display = "block"
 
     // Adds current question
     const currentQuestion = questionData[currentQuestionIndex];
@@ -83,12 +98,10 @@ const selectAnswer = (e) => {
 const restartQuiz = () => {
     currentQuestionIndex = 0;
     score = 0;
-    showQuestion();
-    questionElement.style.display = "block";
-    answerElement.style.display = "block";
-    nextButton.style.display = "block";
+    difficultyButton.style.display = "block"
+    playElement.innerHTML = ""
+    resultElement.innerHTML = ""
 }
-
 
 const nextBtn = () => {
     currentQuestionIndex++;
@@ -102,7 +115,7 @@ const nextBtn = () => {
         playButton.textContent = "Play again?";
         playButton.setAttribute("id", "next-btn");
         playElement.appendChild(playButton);
-
+        playButton.style.display = "block"
         questionElement.style.display = "none";
         answerElement.style.display = "none";
         nextButton.style.display = "none";
@@ -130,5 +143,3 @@ const initQuiz = async () => {
     await fetchQuestions();
     showQuestion();
 };
-
-//initQuiz();
