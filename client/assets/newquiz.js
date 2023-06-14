@@ -1,13 +1,16 @@
-
 const questionElement = document.getElementById("question");
 const answerElement = document.querySelector("#answer-buttons");
 const nextButton = document.getElementById("next-btn");
 const resultElement = document.getElementById("result");
 const playElement = document.getElementById("play");
+const textElement = document.getElementById("text");
+const inputElement = document.getElementById("input");
+const submitElement = document.getElementById("submit");
 
 let questionData = null;
 let currentQuestionIndex = 0;
 let score = 0;
+let playerName = null;
 
 const backButton = document.createElement("button");
 backButton.textContent = "Back to Home";
@@ -37,6 +40,9 @@ const showQuestion = () => {
     answerElement.innerHTML = "";
     resultElement.textContent = "";
     playElement.innerHTML = "";
+    textElement.innerHTML = "";
+    // inputElement.innerHTML = "";
+    // submitElement.innerHTML = "";
 
     // Adds current question
     const currentQuestion = questionData[currentQuestionIndex];
@@ -101,6 +107,21 @@ const nextBtn = () => {
         playButton.setAttribute("id", "next-btn");
         playElement.appendChild(playButton);
 
+        textElement.innerHTML = `Would you like to submit your score?`;
+
+        const nameInput = document.createElement("input");
+        nameInput.setAttribute("type", "text");
+        nameInput.setAttribute("placeholder", "Enter your name");
+        nameInput.setAttribute("id", "name-input");
+        inputElement.appendChild(nameInput);
+
+        const submitButton = document.createElement("button");
+        submitButton.textContent = "Submit";
+        submitButton.setAttribute("id", "next-btn");
+        submitElement.appendChild(submitButton);
+
+        submitButton.addEventListener("click", submitScore);
+
         questionElement.style.display = "none";
         answerElement.style.display = "none";
         nextButton.style.display = "none";
@@ -108,6 +129,20 @@ const nextBtn = () => {
         playButton.addEventListener("click", restartQuiz);
     }
 };
+
+function submitScore(e) {
+    e.preventDefault();
+    playerName = document.getElementById("name-input").value;
+    let newUrl = new URL('../client/scoreboard.html', window.location.href);
+
+    console.log(playerName);
+    newUrl.searchParams.append("name", playerName);
+    newUrl.searchParams.append("score", score);
+    window.location.href = newUrl.href;
+
+    // window.location.href = `../client/scoreboard.html?name=${playerName}&score=${score}`;
+}
+
 
 nextButton.addEventListener("click", nextBtn);
 nextButton.disabled = true;
@@ -118,3 +153,4 @@ const initQuiz = async () => {
 };
 
 initQuiz();
+
