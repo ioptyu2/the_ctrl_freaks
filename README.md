@@ -1,7 +1,7 @@
 # the_ctrl_freaks
 # Geobyte
 ![Screenshot of Geobyte quiz homepage]
-(Geobyte_ss.png)
+(https://raw.githubusercontent.com/ioptyu2/the_ctrl_freaks/dhiviya/Geobyte_ss.png)
 
 ## Installation & Usage
 
@@ -33,7 +33,7 @@
     try {
         const response = await fetch('http://localhost:3005/questions/${difficulty}');
         if (!response.ok) {
-            console.log(`Error fetching JSON:`, response.status);
+            console.log('Error fetching JSON:', response.status);
         }
         const data = await response.json();
         questionData = getRandomSample(data, 5);
