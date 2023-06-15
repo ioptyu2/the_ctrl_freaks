@@ -69,4 +69,48 @@ async function fetchQuestions() {
     }
 } 
 
+const deleteForm = document.getElementById('deleteQuestionForm')
+const deleteDropdown = document.getElementById('questionSelect')
+const selectedQuestionP = document.getElementById('selectedQuestion')
+
+async function getDropdownIds() {
+    const response = await fetch('http://localhost:3005/questions')
+    const data = await response.json()
+
+    data.forEach((question) => {
+        let option = document.createElement('option')
+        option.text = question.id
+        option.value = question.id
+        deleteDropdown.add(option)
+    })
+}
+
+deleteDropdown.addEventListener('change', async function(e) {
+    const response = await fetch(`http://localhost:3005/questions/${e.target.value}`)
+    const data = await response.json()
+
+    let selectedQuestion = document.getElementById('selectedQuestion')
+    selectedQuestion.textContent = data.question
+})
+
+deleteForm.addEventListener('submit', async function(e) {
+    e.preventDefault()
+
+    const confirmPrompt = confirm("Are you sure you want to delete this question?");
+    if (!confirmPrompt) {
+        return
+    }
+
+    await fetch(`http://localhost:3005/questions/delete/${deleteDropdown.value}`, {
+        method: 'DELETE'
+    })
+
+    deleteDropdown.remove(deleteDropdown.selectedIndex)
+    let deleteDisplay = document.getElementById('deleteDisplay')
+    deleteDisplay.textContent = ''
+})
+
+getDropdownIds()
+
+
 

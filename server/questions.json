@@ -1,220 +1,460 @@
 {
-    "questions": [
-      {
-        "category": "easy",
-        "id": 1,
-        "question": "Which of the following is NOT a renewable resource?",
-        "options": [
-          {"option": "Solar energy", "correct": false},
-          {"option": "Wind energy", "correct": false},
-          {"option": "Fossil fuels", "correct": true},
-          {"option": "Hydroelectric power", "correct": false}
-        ],
-        "explanation": "Fossil fuels are not a renewable resource - they cannot be replenished in a short period of time."
-      },
-      {
-        "category": "easy",
-        "id": 2,
-        "question": "What is the capital city of Australia?",
-        "options": [
-          {"option": "Sydney", "correct": false},
-          {"option": "Melbourne", "correct": false},
-          {"option": "Canberra", "correct": true},
-          {"option": "Perth", "correct": false}
-        ],
-        "explanation": "The capital city of Australia is Canberra."
-      },
-      {
-        "category": "easy",
-        "id": 3,
-        "question": "What is the largest ocean in the world?",
-        "options": [
-          {"option": "Atlantic Ocean", "correct": false},
-          {"option": "Indian Ocean", "correct": false},
-          {"option": "Arctic Ocean", "correct": false},
-          {"option": "Pacific Ocean", "correct": true}
-        ],
-        "explanation": "The largest ocean in the world is the Pacific Ocean!"
-      },
-      {
-        "category": "easy",
-        "id": 4,
-        "question": "Which of the following countries is located entirely in the Southern Hemisphere?",
-        "options": [
-          {"option": "United States", "correct": false},
-          {"option": "Canada", "correct": false},
-          {"option": "Russia", "correct": false},
-          {"option": "Australia", "correct": true}
-        ],
-        "explanation": "Australia is located below the equator, so it is located entirely in the Southern Hemisphere."
-      },
-      {
-        "category": "easy",
-        "id": 5,
-        "question": "The equator is an imaginary line that divides the Earth into:",
-        "options": [
-          {"option": "East and West hemispheres", "correct": false},
-          {"option": "Northern and Southern hemispheres", "correct": true},
-          {"option": "Tropics and Polar regions", "correct": false},
-          {"option": "Western and Eastern hemispheres", "correct": false}
-        ],
-        "explanation": "The equator is a circle of latitude that divides Earth into Northern and Southern Hemispheres"
-      },
-      {
-        "category": "easy",
-        "id": 6,
-        "question": "Which of the following continents is the largest by land area?",
-        "options": [
-          {"option": "Europe", "correct": false},
-          {"option": "Africa", "correct": false},
-          {"option": "South America", "correct": false},
-          {"option": "Asia", "correct": true}
-        ],
-        "explanation":"Asia is the largest continent in the world!"
-      },
-      {
-        "category": "intermediate",
-        "id": 7,
-        "question": "Which of the following is an example of a primary economic activity?",
-        "options": [
-          {"option": "Retail sales", "correct": false},
-          {"option": "Banking", "correct": false},
-          {"option": "Manufacturing", "correct": false},
-          {"option": "Farming", "correct": true}
-        ],
-        "explanation": "Farming is a primary economic activity as it exploits natural resources."
-      },
-      {
-        "category": "intermediate",
-        "id": 8,
-        "question": "Which of the following is the largest waterfall in the world?",
-        "options": [
-          {"option": "Niagara Falls", "correct": false},
-          {"option": "Angel Falls", "correct": false},
-          {"option": "Victoria Falls", "correct": true},
-          {"option": "Iguazu Falls", "correct": false}
-        ],
-        "explanation": "Victoria Falls is the largest waterfall in the world!"
-      },
-      {
-        "category": "intermediate",
-        "id": 9,
-        "question": "Which of the following is a landform created by the action of a river?",
-        "options": [
-          {"option": "Delta", "correct": true},
-          {"option": "Glacier", "correct": false},
-          {"option": "Volcano", "correct": false},
-          {"option": "Plateau", "correct": false}
-        ],
-        "explanation": "A delta is created by the action of a river as it empties its water and sediment into another body of water."
-      },
-      {
-        "category": "intermediate",
-        "id": 10,
-        "question": "Which of the following is an example of a primary sector job?",
-        "options": [
-          {"option": "Teacher", "correct": false},
-          {"option": "Doctor", "correct": false},
-          {"option": "Farmer", "correct": true},
-          {"option": "Architect", "correct": false}
-        ],
-        "explanation": "A farmer is an example of a primary sector job as they grow goods and extract materials from the ground."
-      },
-      {
-        "category": "intermediate",
-        "id": 11,
-        "question": "Which of the following natural disasters is characterized by a sudden release of energy in the Earth's crust, resulting in seismic waves?",
-        "options": [
-          {"option": "Hurricane", "correct": false},
-          {"option": "Tornado", "correct": false},
-          {"option": "Earthquake", "correct": true},
-          {"option": "Volcanic eruption", "correct": false}
-        ],
-        "explanation": "Earthquakes are a sudden release of energy from the Earth's crust and this causes seismic waves."
-      },
-      {
-        "category": "intermediate",
-        "id": 12,
-        "question": "What is the process of coastal erosion caused by the action of waves called?",
-        "options": [
-          {"option": "Weathering", "correct": false},
-          {"option": "Deposition", "correct": false},
-          {"option": "Abrasion", "correct": true},
-          {"option": "Corrosion", "correct": false}
-        ],
-        "explanation": "Abrasion is a type of coastal erosion which is caused by the action of waves."
-      },
-      {
-        "category": "intermediate",
-        "id": 13,
-        "question": "What is the term used to describe the movement of people from one place to another?",
-        "options": [
-          {"option": "Immigration", "correct": false},
-          {"option": "Emigration", "correct": false},
-          {"option": "Migration", "correct": true},
-          {"option": "Integration", "correct": false}
-        ],
-        "explanation": "Migration is the movement of people from one place to another."
-      },
-      {
-        "category": "hard",
-        "id": 14,
-        "question": "Which of the following is NOT a factor that influences population growth?",
-        "options": [
-          {"option": "Birth rate", "correct": false},
-          {"option": "Death rate", "correct": false},
-          {"option": "Immigration rate", "correct": false},
-          {"option": "Urbanization rate", "correct": true}
-        ],
-        "explanation":"Urbanization rate does not influence population growth."
-      },
-      {
-        "category": "hard",
-        "id": 15,
-        "question": "Which of the following is a push factor for migration?",
-        "options": [
-          {"option": "Better job opportunities", "correct": false},
-          {"option": "Political stability", "correct": false},
-          {"option": "Access to education", "correct": false},
-          {"option": "Conflict or war", "correct": true}
-        ],
-        "explanation":"Conflict or war are push factors for migration."
-      },
-      {
-        "category": "hard",
-        "id": 16,
-        "question": "What is the term used to describe the process of spreading cultural traits from one place to another?",
-        "options": [
-          {"option": "Assimilation", "correct": false},
-          {"option": "Urbanization", "correct": false},
-          {"option": "Globalization", "correct": true},
-          {"option": "Colonization", "correct": false}
-        ],
-        "explanation":"Globalization describes the process of spreading cultural traits from one place to another as it involves interaction and integration among people worldwide."
-      },
-      {
-        "category": "hard",
-        "id": 17,
-        "question": "Which of the following is a major factor contributing to urbanization?",
-        "options": [
-          {"option": "Rural-urban migration", "correct": true},
-          {"option": "De-industrialization", "correct": false},
-          {"option": "Decreasing population growth", "correct": false},
-          {"option": "Agricultural expansion", "correct": false}
-        ],
-        "explanation":"Rural-urban migration contributes to urbanization."
-      },
-      {
-        "category": "hard",
-        "id": 18,
-        "question": "What is the term used to describe the process of turning saltwater into freshwater?",
-        "options": [
-          {"option": "Desalination", "correct": true},
-          {"option": "Irrigation", "correct": false},
-          {"option": "Deforestation", "correct": false},
-          {"option": "Conservation", "correct": false}
-        ],
-        "explanation":"Desalination is the process by which the dissolved mineral salts in seawater are removed, leaving freshwater."
-      }
-    ]
-  }
+  "questions": [
+    {
+      "category": "easy",
+      "id": 1,
+      "question": "Which of the following is NOT a renewable resource?",
+      "options": [
+        {
+          "option": "Solar energy",
+          "correct": false
+        },
+        {
+          "option": "Wind energy",
+          "correct": false
+        },
+        {
+          "option": "Fossil fuels",
+          "correct": true
+        },
+        {
+          "option": "Hydroelectric power",
+          "correct": false
+        }
+      ],
+      "explanation": "Fossil fuels are not a renewable resource - they cannot be replenished in a short period of time."
+    },
+    {
+      "category": "easy",
+      "id": 2,
+      "question": "What is the capital city of Australia?",
+      "options": [
+        {
+          "option": "Sydney",
+          "correct": false
+        },
+        {
+          "option": "Melbourne",
+          "correct": false
+        },
+        {
+          "option": "Canberra",
+          "correct": true
+        },
+        {
+          "option": "Perth",
+          "correct": false
+        }
+      ],
+      "explanation": "The capital city of Australia is Canberra."
+    },
+    {
+      "category": "easy",
+      "id": 3,
+      "question": "What is the largest ocean in the world?",
+      "options": [
+        {
+          "option": "Atlantic Ocean",
+          "correct": false
+        },
+        {
+          "option": "Indian Ocean",
+          "correct": false
+        },
+        {
+          "option": "Arctic Ocean",
+          "correct": false
+        },
+        {
+          "option": "Pacific Ocean",
+          "correct": true
+        }
+      ],
+      "explanation": "The largest ocean in the world is the Pacific Ocean!"
+    },
+    {
+      "category": "easy",
+      "id": 4,
+      "question": "Which of the following countries is located entirely in the Southern Hemisphere?",
+      "options": [
+        {
+          "option": "United States",
+          "correct": false
+        },
+        {
+          "option": "Canada",
+          "correct": false
+        },
+        {
+          "option": "Russia",
+          "correct": false
+        },
+        {
+          "option": "Australia",
+          "correct": true
+        }
+      ],
+      "explanation": "Australia is located below the equator, so it is located entirely in the Southern Hemisphere."
+    },
+    {
+      "category": "easy",
+      "id": 5,
+      "question": "The equator is an imaginary line that divides the Earth into:",
+      "options": [
+        {
+          "option": "East and West hemispheres",
+          "correct": false
+        },
+        {
+          "option": "Northern and Southern hemispheres",
+          "correct": true
+        },
+        {
+          "option": "Tropics and Polar regions",
+          "correct": false
+        },
+        {
+          "option": "Western and Eastern hemispheres",
+          "correct": false
+        }
+      ],
+      "explanation": "The equator is a circle of latitude that divides Earth into Northern and Southern Hemispheres"
+    },
+    {
+      "category": "easy",
+      "id": 6,
+      "question": "Which of the following continents is the largest by land area?",
+      "options": [
+        {
+          "option": "Europe",
+          "correct": false
+        },
+        {
+          "option": "Africa",
+          "correct": false
+        },
+        {
+          "option": "South America",
+          "correct": false
+        },
+        {
+          "option": "Asia",
+          "correct": true
+        }
+      ],
+      "explanation": "Asia is the largest continent in the world!"
+    },
+    {
+      "category": "intermediate",
+      "id": 7,
+      "question": "Which of the following is an example of a primary economic activity?",
+      "options": [
+        {
+          "option": "Retail sales",
+          "correct": false
+        },
+        {
+          "option": "Banking",
+          "correct": false
+        },
+        {
+          "option": "Manufacturing",
+          "correct": false
+        },
+        {
+          "option": "Farming",
+          "correct": true
+        }
+      ],
+      "explanation": "Farming is a primary economic activity as it exploits natural resources."
+    },
+    {
+      "category": "intermediate",
+      "id": 8,
+      "question": "Which of the following is the largest waterfall in the world?",
+      "options": [
+        {
+          "option": "Niagara Falls",
+          "correct": false
+        },
+        {
+          "option": "Angel Falls",
+          "correct": false
+        },
+        {
+          "option": "Victoria Falls",
+          "correct": true
+        },
+        {
+          "option": "Iguazu Falls",
+          "correct": false
+        }
+      ],
+      "explanation": "Victoria Falls is the largest waterfall in the world!"
+    },
+    {
+      "category": "intermediate",
+      "id": 9,
+      "question": "Which of the following is a landform created by the action of a river?",
+      "options": [
+        {
+          "option": "Delta",
+          "correct": true
+        },
+        {
+          "option": "Glacier",
+          "correct": false
+        },
+        {
+          "option": "Volcano",
+          "correct": false
+        },
+        {
+          "option": "Plateau",
+          "correct": false
+        }
+      ],
+      "explanation": "A delta is created by the action of a river as it empties its water and sediment into another body of water."
+    },
+    {
+      "category": "intermediate",
+      "id": 10,
+      "question": "Which of the following is an example of a primary sector job?",
+      "options": [
+        {
+          "option": "Teacher",
+          "correct": false
+        },
+        {
+          "option": "Doctor",
+          "correct": false
+        },
+        {
+          "option": "Farmer",
+          "correct": true
+        },
+        {
+          "option": "Architect",
+          "correct": false
+        }
+      ],
+      "explanation": "A farmer is an example of a primary sector job as they grow goods and extract materials from the ground."
+    },
+    {
+      "category": "intermediate",
+      "id": 11,
+      "question": "Which of the following natural disasters is characterized by a sudden release of energy in the Earth's crust, resulting in seismic waves?",
+      "options": [
+        {
+          "option": "Hurricane",
+          "correct": false
+        },
+        {
+          "option": "Tornado",
+          "correct": false
+        },
+        {
+          "option": "Earthquake",
+          "correct": true
+        },
+        {
+          "option": "Volcanic eruption",
+          "correct": false
+        }
+      ],
+      "explanation": "Earthquakes are a sudden release of energy from the Earth's crust and this causes seismic waves."
+    },
+    {
+      "category": "intermediate",
+      "id": 12,
+      "question": "What is the process of coastal erosion caused by the action of waves called?",
+      "options": [
+        {
+          "option": "Weathering",
+          "correct": false
+        },
+        {
+          "option": "Deposition",
+          "correct": false
+        },
+        {
+          "option": "Abrasion",
+          "correct": true
+        },
+        {
+          "option": "Corrosion",
+          "correct": false
+        }
+      ],
+      "explanation": "Abrasion is a type of coastal erosion which is caused by the action of waves."
+    },
+    {
+      "category": "intermediate",
+      "id": 13,
+      "question": "What is the term used to describe the movement of people from one place to another?",
+      "options": [
+        {
+          "option": "Immigration",
+          "correct": false
+        },
+        {
+          "option": "Emigration",
+          "correct": false
+        },
+        {
+          "option": "Migration",
+          "correct": true
+        },
+        {
+          "option": "Integration",
+          "correct": false
+        }
+      ],
+      "explanation": "Migration is the movement of people from one place to another."
+    },
+    {
+      "category": "hard",
+      "id": 14,
+      "question": "Which of the following is NOT a factor that influences population growth?",
+      "options": [
+        {
+          "option": "Birth rate",
+          "correct": false
+        },
+        {
+          "option": "Death rate",
+          "correct": false
+        },
+        {
+          "option": "Immigration rate",
+          "correct": false
+        },
+        {
+          "option": "Urbanization rate",
+          "correct": true
+        }
+      ],
+      "explanation": "Urbanization rate does not influence population growth."
+    },
+    {
+      "category": "hard",
+      "id": 15,
+      "question": "Which of the following is a push factor for migration?",
+      "options": [
+        {
+          "option": "Better job opportunities",
+          "correct": false
+        },
+        {
+          "option": "Political stability",
+          "correct": false
+        },
+        {
+          "option": "Access to education",
+          "correct": false
+        },
+        {
+          "option": "Conflict or war",
+          "correct": true
+        }
+      ],
+      "explanation": "Conflict or war are push factors for migration."
+    },
+    {
+      "category": "hard",
+      "id": 16,
+      "question": "What is the term used to describe the process of spreading cultural traits from one place to another?",
+      "options": [
+        {
+          "option": "Assimilation",
+          "correct": false
+        },
+        {
+          "option": "Urbanization",
+          "correct": false
+        },
+        {
+          "option": "Globalization",
+          "correct": true
+        },
+        {
+          "option": "Colonization",
+          "correct": false
+        }
+      ],
+      "explanation": "Globalization describes the process of spreading cultural traits from one place to another as it involves interaction and integration among people worldwide."
+    },
+    {
+      "category": "hard",
+      "id": 17,
+      "question": "Which of the following is a major factor contributing to urbanization?",
+      "options": [
+        {
+          "option": "Rural-urban migration",
+          "correct": true
+        },
+        {
+          "option": "De-industrialization",
+          "correct": false
+        },
+        {
+          "option": "Decreasing population growth",
+          "correct": false
+        },
+        {
+          "option": "Agricultural expansion",
+          "correct": false
+        }
+      ],
+      "explanation": "Rural-urban migration contributes to urbanization."
+    },
+    {
+      "category": "hard",
+      "id": 18,
+      "question": "What is the term used to describe the process of turning saltwater into freshwater?",
+      "options": [
+        {
+          "option": "Desalination",
+          "correct": true
+        },
+        {
+          "option": "Irrigation",
+          "correct": false
+        },
+        {
+          "option": "Deforestation",
+          "correct": false
+        },
+        {
+          "option": "Conservation",
+          "correct": false
+        }
+      ],
+      "explanation": "Desalination is the process by which the dissolved mineral salts in seawater are removed, leaving freshwater."
+    },
+    {
+      "category": "easy",
+      "id": 19,
+      "question": "Example Question",
+      "options": [
+        {
+          "option": "a",
+          "correct": true
+        },
+        {
+          "option": "b",
+          "correct": false
+        },
+        {
+          "option": "c",
+          "correct": false
+        },
+        {
+          "option": "d",
+          "correct": false
+        }
+      ],
+      "explanation": "a is correct"
+    }
+  ]
+}

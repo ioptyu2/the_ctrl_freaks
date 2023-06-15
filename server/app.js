@@ -41,11 +41,28 @@ app.post("/questions/add", (req, res) => {
 })
 
 app.delete("/questions/delete/:id", (req, res) => {
-    if(req.body > questions.questions.length){
-        res.status(404).send()
-    }else{
-        questions.questions.splice(req.body - 1, 1)
-        res.status(204).send()
+    const id = parseInt(req.params.id)  
+    const index = questions.questions.findIndex(q => q.id === id)  
+
+    if(index === -1) {
+        res.status(404).send() 
+    } else {
+        questions.questions.splice(index, 1)
+
+        fs.writeFile('./questions.json', JSON.stringify(questions, null, 2), () => {
+            res.status(204).send()
+        })
+    }
+})
+
+app.get("/questions/:id", (req, res) => {
+    const id = parseInt(req.params.id)
+    const question = questions.questions.find(q => q.id === id)
+
+    if (question) {
+        res.send(question)
+    } else {
+        res.status(404).send() 
     }
 })
 
