@@ -80,58 +80,51 @@
             <label for="explanation">NOTE</label>
             <input type="text" id="explanation" name="explanation" placeholder="Enter a short explanation" required>
 
-            <button type="submit">Add Question</button>
+            <button type="submit">ADD QUESTION</button>
         </form>
         <!-- add questions form ends -->
 
         <!-- edit questions form starts -->
         <form id="selectForm">
+            <label for="ID">PICK QUESTION ID</label>
             <br>
-            <label for="ID">Choose a question ID:</label>
             <select name="id" id="editSelectId">
-                <option value="" disabled selected hidden> Select ID</option>
+                <option value="" disabled selected hidden> SELECT ID</option>
             </select>
             <br><br>
         </form>
 
         <form id="editQuestionForm">
 
-            <label for="question">Question:</label>
+            <label for="question">QUESTION</label>
             <input type="text" id="question" name="question" placeholder="Enter the question you want to add" required>
 
-            <div class="option-group">
-                <label for="option1">Option 1:</label>
+            <label for="option-group">ANSWER OPTIONS</label>
+            <div class="option-group" name="option-group">
                 <input type="text" id="option1" name="option1" placeholder="Enter a potential answer for the question"
                     required>
                 <input type="checkbox" id="correct1" name="correct1">
-                <label for="correct1">Check the correct answer</label>
             </div>
 
             <div class="option-group">
-                <label for="option2">Option 2:</label>
                 <input type="text" id="option2" name="option2" placeholder="Enter a potential answer for the question"
                     required>
                 <input type="checkbox" id="correct2" name="correct2">
-                <label for="correct2">Check the correct answer</label>
             </div>
 
             <div class="option-group">
-                <label for="option3">Option 3:</label>
                 <input type="text" id="option3" name="option3" placeholder="Enter a potential answer for the question"
                     required>
                 <input type="checkbox" id="correct3" name="correct3">
-                <label for="correct3">Check the correct answer</label>
             </div>
 
             <div class="option-group">
-                <label for="option4">Option 4:</label>
                 <input type="text" id="option4" name="option4" placeholder="Enter a potential answer for the question"
                     required>
                 <input type="checkbox" id="correct4" name="correct4">
-                <label for="correct4">Check the correct answer</label>
             </div>
 
-            <label for="category">Category:</label>
+            <label for="category">CATEGORY</label>
             <select id="category" name="category" required>
                 <option value="" disabled selected>Please select a category</option>
                 <option value="easy">Easy</option>
@@ -139,20 +132,23 @@
                 <option value="hard">Hard</option>
             </select>
 
-            <label for="explanation">Explanation:</label>
+            <label for="explanation">NOTE</label>
             <input type="text" id="explanation" name="explanation"
                 placeholder="Enter an explanation for the correct answer" required>
 
-            <button type="submit">Edit Question</button>
+            <button type="submit">EDIT QUESTION</button>
         </form>
         <!-- edit questions form ends -->
 
         <!-- delete questions form starts -->
         <form id="deleteQuestionForm">
-            <label for="questionSelect">Select a Question:</label>
-            <select id="questionSelect"></select>
+            <label for="questionSelect">PICK QUESTION ID</label>
+            <br>
+            <select id="questionSelect">
+                <option value="" disabled selected hidden> SELECT ID</option>
+            </select>
             <p id="selectedQuestion"></p>
-            <button id="deleteButton">Delete</button>
+            <button id="deleteButton">DELETE</button>
         </form>
 
         <!-- delete questions form ends -->
