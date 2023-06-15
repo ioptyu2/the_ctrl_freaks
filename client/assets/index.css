@@ -35,7 +35,6 @@ nav ul {
 nav ul li a {
     color: #283a14;
     text-decoration: none;
-    padding: 0px;
     margin: 0 20px;
     font-size: 20px;
     font-weight: 600;
@@ -73,12 +72,12 @@ h1 {
     font-weight: 800;
     font-style: italic;
     color: #293e11;
+    transition: all 0.5s ease-in-out;
 }
 
 h1:hover {
     color: #315c00;
     cursor: default;
-    transition: 0.5s;
 }
 
 p {
@@ -106,11 +105,12 @@ p {
     cursor: pointer;
     font-size: 18px;
     font-weight: 400;
+    transition: all 0.5s ease-in-out;
 }
 
 .buttons button:hover {
     background-color: #315c00;
-    transition: 0.5s;
+    box-shadow: 0 5px 15px #233f02;
 }
 
 .scoreboard-buttons button {

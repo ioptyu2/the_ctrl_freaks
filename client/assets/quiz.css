@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Varela Round', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     box-sizing: border-box;
 }
 
@@ -9,14 +9,62 @@ body {
     background: #e4e3d9;
 }
 
+header {
+    color: #333;
+    padding: 10px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    margin-top: 20px;
+    list-style-type: none;
+}
+
+
+nav ul li a {
+    color: #283a14;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+nav ul li {
+    position: relative;
+    display: inline-block;
+}
+
+nav ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #a0591b;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+nav ul li:hover:after {
+    width: 100%;
+}
+
+
 
 .app {
     background: #293e11;
     width: 90%;
+    height: 600px;
     max-width: 600px;
     margin: 45px auto 0;
     border-radius: 10px;
-    padding: 30px;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .app h1 {
@@ -48,12 +96,12 @@ body {
     width: 100%;
     border: none;
     padding: 12px 24px;
-    margin: 10px 0;
+    margin-top: 20px;
     text-align: left;
     border-radius: 4px;
     cursor: pointer;
-    transition: all 0.3s;
     font-size: 18px;
+    transition: 0.3s;
 }
 
 .btn:hover {
@@ -80,7 +128,7 @@ p {
     width: 150px;
     border: 0;
     padding: 12px 24px;
-    margin: 20px auto 0;
+    margin: 50px auto 30px;
     border-radius: 4px;
     cursor: pointer;
     font-size: 18px;
@@ -99,6 +147,7 @@ p {
 #result {
     display: flex;
     justify-content: center;
+    padding-top: 20px;
     color: #e4e3d9;
     font-weight: 600;
     font-size: 24px;
@@ -120,7 +169,7 @@ p {
     border: none;
     cursor: pointer;
     font-size: 18px;
-    font-weight: 520;
+    font-weight: 500;
 }
 
 #easy:hover {
@@ -150,6 +199,7 @@ p {
     display: flex;
     justify-content: center;
     margin-top: 40px;
+    padding-top: 30px;
     color: #e4e3d9;
     font-weight: 600;
     font-size: 24px;
