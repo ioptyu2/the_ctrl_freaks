@@ -12,6 +12,8 @@ body {
 nav {
     display: flex;
     justify-content: center;
+    margin-left: 2px;
+    margin-top: 10px;
 }
 
 nav ul {
@@ -53,7 +55,7 @@ nav ul li:hover:after {
     width: 90%;
     height: 580px;
     max-width: 600px;
-    margin: 10px auto 0;
+    margin: 20px auto 0;
     border-radius: 10px;
     padding-top: 30px;
     padding-left: 30px;
@@ -101,4 +103,8 @@ nav ul li:hover:after {
     border-radius: 4px;
     cursor: pointer;
     font-size: 18px;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2px;
 }
