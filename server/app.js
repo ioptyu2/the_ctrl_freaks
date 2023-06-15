@@ -49,9 +49,21 @@ app.delete("/questions/delete/:id", (req, res) => {
     }
 })
 
-app.patch("questions/edit", (req, res) => {
-    questions.questions[req.body.id] = req.body
-    res.status(200)
+app.patch("/questions/edit", (req, res) => {
+    questions.questions[parseInt(req.body.id - 1)] = req.body
+    fs.writeFile('./questions.json', JSON.stringify(questions, null, 2), () => {
+        res.status(200).send(req.body);
+    })
+})
+
+app.get("/questions/:id", (req, res) => {
+    const id = parseInt(req.params.id)
+    const question = questions.questions.find(q => q.id === id)
+    if (question) {
+        res.send(question)
+    } else {
+        res.status(404).send()
+    }
 })
 
 module.exports = app
