@@ -7,6 +7,7 @@ const fs = require('fs')
 // app.use(logger)
 
 const questions = require("./questions.json")
+const scores = [];
 
 app.use(cors())
 app.use(express.json())
@@ -41,9 +42,9 @@ app.post("/questions/add", (req, res) => {
 })
 
 app.delete("/questions/delete/:id", (req, res) => {
-    if(req.body > questions.questions.length){
+    if (req.body > questions.questions.length) {
         res.status(404).send()
-    }else{
+    } else {
         questions.questions.splice(req.body - 1, 1)
         res.status(204).send()
     }
@@ -66,4 +67,15 @@ app.get("/questions/:id", (req, res) => {
     }
 })
 
+app.post("/scores", (req, res) => {
+    scores.push(req.body);
+    res.sendStatus(201);
+});
+
+app.get("/scores", (req, res) => {
+    let sortedScores = scores.sort((a, b) => b.score - a.score);
+    res.json(sortedScores);
+});
+
 module.exports = app
+
