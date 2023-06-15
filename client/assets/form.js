@@ -5,18 +5,27 @@ let questionBank = {};
 let questionData = null;
 const settingsButton = document.getElementById("buttons");
 const editButton = document.getElementById("edit");
-const editSelect = document.getElementById("editSelectId"); 
-const selectForm = document.getElementById("selectForm")
+const editSelect = document.getElementById("editSelectId");
+const selectForm = document.getElementById("selectForm");
+const deleteForm = document.getElementById('deleteQuestionForm');
+const deleteDropdown = document.getElementById('questionSelect');
+const selectedQuestionP = document.getElementById('selectedQuestion');
+const backButton = document.getElementById('back-button');
 
 addForm.style.display = "none";
 editForm.style.display = "none";
 selectForm.style.display = "none";
+deleteForm.style.display = "none";
+
+backButton.addEventListener("click", () => {
+    window.location.href = "../client/editQuestion.html";
+});
 
 settingsButton.addEventListener("click", (e) => {
     let settings = e.target.id
     settingsButton.style.display = "none"
     document.getElementById(`${settings}QuestionForm`).style.display = "block"
-    if(settings == "edit"){
+    if (settings == "edit") {
         selectForm.style.display = "block"
     }
 })
@@ -33,18 +42,19 @@ async function addSelect() {
         option.value = question.id
         editSelect.add(option)
     })
+
 }
 
-editSelect.addEventListener("change", async function(e) {
+editSelect.addEventListener("change", async function (e) {
     const response = await fetch(`http://localhost:3005/questions/${e.target.value}`)
     const data = await response.json()
     editForm.question.value = data.question
 
-    data.options.forEach(function(options, index) {
+    data.options.forEach(function (options, index) {
         editForm.elements[`option${index + 1}`].value = data.options[index].option
-        if(options.correct == true){
-           editForm.elements[`correct${index + 1}`].checked = true
-        }else{
+        if (options.correct == true) {
+            editForm.elements[`correct${index + 1}`].checked = true
+        } else {
             editForm.elements[`correct${index + 1}`].checked = false
         }
     })
@@ -52,12 +62,12 @@ editSelect.addEventListener("change", async function(e) {
     editForm.explanation.value = data.explanation
 })
 
-editForm.addEventListener('submit', async function(e) {
+editForm.addEventListener('submit', async function (e) {
     e.preventDefault()
 
     let question = {
         category: editForm.category.value,
-        id: editSelect.value,  
+        id: parseInt(editSelect.value),
         question: editForm.question.value,
         options: [
             { option: editForm.option1.value, correct: editForm.correct1.checked },
@@ -70,11 +80,13 @@ editForm.addEventListener('submit', async function(e) {
     console.log(question)
     editQuestion(question)
     e.target.reset()
+
+    window.location.href = "../client/editQuestion.html";
 })
 
-async function editQuestion(question){
+async function editQuestion(question) {
     try {
-        const response = await fetch('http://localhost:3005/questions/edit', { 
+        const response = await fetch('http://localhost:3005/questions/edit', {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(question)
@@ -91,23 +103,23 @@ async function editQuestion(question){
     }
 }
 
-checkboxes.forEach(function(checkbox) {
-  checkbox.addEventListener("change", function() {
-    if (checkbox.checked) {
-      checkboxes.forEach(function(otherCheckbox) {
-        if (otherCheckbox !== checkbox) otherCheckbox.checked = false
-      })
-    }
-  })
+checkboxes.forEach(function (checkbox) {
+    checkbox.addEventListener("change", function () {
+        if (checkbox.checked) {
+            checkboxes.forEach(function (otherCheckbox) {
+                if (otherCheckbox !== checkbox) otherCheckbox.checked = false
+            })
+        }
+    })
 })
 
-addForm.addEventListener('submit', async function(e) {
+addForm.addEventListener('submit', async function (e) {
     e.preventDefault()
     await fetchQuestions()
 
     let question = {
         category: addForm.category.value,
-        id: questionData.length +1,  
+        id: questionData.length + 1,
         question: addForm.question.value,
         options: [
             { option: addForm.option1.value, correct: addForm.correct1.checked },
@@ -117,14 +129,14 @@ addForm.addEventListener('submit', async function(e) {
         ],
         explanation: addForm.explanation.value
     }
-    
+
     addQuestion(question)
     e.target.reset()
 })
 
 async function addQuestion(question) {
     try {
-        const response = await fetch('http://localhost:3005/questions/add', { 
+        const response = await fetch('http://localhost:3005/questions/add', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(question)
@@ -139,6 +151,8 @@ async function addQuestion(question) {
     } catch (e) {
         console.log(e)
     }
+
+    window.location.href = "../client/editQuestion.html";
 }
 
 async function fetchQuestions() {
@@ -153,11 +167,7 @@ async function fetchQuestions() {
     } catch (err) {
         console.log(err);
     }
-} 
-
-const deleteForm = document.getElementById('deleteQuestionForm')
-const deleteDropdown = document.getElementById('questionSelect')
-const selectedQuestionP = document.getElementById('selectedQuestion')
+}
 
 async function getDropdownIds() {
     const response = await fetch('http://localhost:3005/questions')
@@ -171,7 +181,7 @@ async function getDropdownIds() {
     })
 }
 
-deleteDropdown.addEventListener('change', async function(e) {
+deleteDropdown.addEventListener('change', async function (e) {
     const response = await fetch(`http://localhost:3005/questions/${e.target.value}`)
     const data = await response.json()
 
@@ -179,7 +189,7 @@ deleteDropdown.addEventListener('change', async function(e) {
     selectedQuestion.textContent = data.question
 })
 
-deleteForm.addEventListener('submit', async function(e) {
+deleteForm.addEventListener('submit', async function (e) {
     e.preventDefault()
 
     const confirmPrompt = confirm("Are you sure you want to delete this question?");
@@ -194,6 +204,8 @@ deleteForm.addEventListener('submit', async function(e) {
     deleteDropdown.remove(deleteDropdown.selectedIndex)
     let deleteDisplay = document.getElementById('deleteDisplay')
     deleteDisplay.textContent = ''
+
+    window.location.href = "../client/editQuestion.html";
 })
 
 getDropdownIds()

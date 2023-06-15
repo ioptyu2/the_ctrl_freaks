@@ -114,3 +114,7 @@ th {
     background-color: #315c00;
     transition: 0.5s;
 }
+
+#subtitle {
+    text-align: center;
+}

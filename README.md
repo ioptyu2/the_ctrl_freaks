@@ -3,7 +3,7 @@
 ![Screenshot of Geobyte quiz homepage](https://raw.githubusercontent.com/ioptyu2/the_ctrl_freaks/dhiviya/Geobyte_ss.png)
 
 ## Project Description
-Geobyte is an educational app which tests students on their geographic general knowledge. It targets Key Stage 3 and 4 students.
+GEOBYTE is an educational app which tests students on their geographical knowledge. It targets Key Stage 3 students.
 
 ### Key Features
 The app consists of the following features:
@@ -15,14 +15,15 @@ The app consists of the following features:
 ## Installation & Usage
 
 ### Installation
-* Clone or download the repo.
-
-### Usage
 * Open the terminal
 * Use git command `git clone` followed by the project URL 
 * Navigate to 'the_ctrl_freaks' directory
 * In the terminal, install relevant packages with `npm install --save-dev` 
 * Use the git command `code .` to open in VS Code
+
+### Usage
+* Use git command `npm run dev` to run server.
+* Open index.html with live server extension.
 
 ## Technologies
 * HTML
@@ -60,7 +61,7 @@ The app consists of the following features:
 
 ### Wins
 * Managed to implement an async function that fetches a total of five objects containing the relevant information.
-* Created a dynamic quiz page which goes through the difficulty levels, the quiz questions and then displays the results on the results page.
+* Created a dynamic quiz page which goes through the difficulty levels, the quiz questions and then displays the results page.
 * Created a function that allows you to submit your name and score, and then directs you to the scoreboard.
 * Created a settings page where you can dynamically create, edit and delete questions.
 
