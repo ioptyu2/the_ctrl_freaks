@@ -4,7 +4,6 @@ const editForm = document.getElementById("editQuestionForm");
 let questionBank = {};
 let questionData = null;
 const settingsButton = document.getElementById("buttons");
-let settings = "";
 const editButton = document.getElementById("edit");
 const editSelect = document.getElementById("editSelectId"); 
 const selectForm = document.getElementById("selectForm")
@@ -14,7 +13,7 @@ editForm.style.display = "none";
 selectForm.style.display = "none";
 
 settingsButton.addEventListener("click", (e) => {
-    settings = e.target.id
+    let settings = e.target.id
     settingsButton.style.display = "none"
     document.getElementById(`${settings}QuestionForm`).style.display = "block"
     if(settings == "edit"){
@@ -41,26 +40,17 @@ editSelect.addEventListener("change", async function(e) {
     const data = await response.json()
 
     editForm.question.value = data.question
-    //unchecks everything
-    editForm.correct1.checked = false
-    editForm.correct2.checked = false
-    editForm.correct3.checked = false
-    editForm.correct4.checked = false
-
-    editForm.option1.value = data.options[0].option
-    editForm.option2.value = data.options[1].option
-    editForm.option3.value = data.options[2].option
-    editForm.option4.value = data.options[3].option
 
     data.options.forEach(function(options, index) {
+        editForm.elements[`option${index + 1}`].value = data.options[index].option
         if(options.correct == true){
            editForm.elements[`correct${index + 1}`].checked = true
+        }else{
+            editForm.elements[`correct${index + 1}`].checked = false
         }
     })
-    
     editForm.category.value = data.category
     editForm.explanation.value = data.explanation
-
 })
 
 checkboxes.forEach(function(checkbox) {
