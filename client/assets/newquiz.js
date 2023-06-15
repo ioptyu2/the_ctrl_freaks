@@ -62,7 +62,7 @@ const showQuestion = () => {
     //Shows buttons again after play again
     questionElement.style.display = "block";
     answerElement.style.display = "block";
-    nextButton.style.display = "block"
+    nextButton.style.display = "block";
 
     // Adds current question
     const currentQuestion = questionData[currentQuestionIndex];
