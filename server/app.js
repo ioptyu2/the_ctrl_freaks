@@ -54,4 +54,14 @@ app.patch("questions/edit", (req, res) => {
     res.status(200)
 })
 
+app.get("/questions/:id", (req, res) => {
+    const id = parseInt(req.params.id)
+    const question = questions.questions.find(q => q.id === id)
+    if (question) {
+        res.send(question)
+    } else {
+        res.status(404).send()
+    }
+})
+
 module.exports = app

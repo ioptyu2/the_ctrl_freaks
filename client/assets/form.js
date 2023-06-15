@@ -1,15 +1,66 @@
 let checkboxes = document.querySelectorAll("input[type=checkbox]");
 const addForm = document.getElementById('addQuestionForm');
+const editForm = document.getElementById("editQuestionForm");
 let questionBank = {};
 let questionData = null;
 const settingsButton = document.getElementById("buttons");
 let settings = "";
+const editButton = document.getElementById("edit");
+const editSelect = document.getElementById("editSelectId"); 
+const selectForm = document.getElementById("selectForm")
+
 addForm.style.display = "none";
+editForm.style.display = "none";
+selectForm.style.display = "none";
 
 settingsButton.addEventListener("click", (e) => {
     settings = e.target.id
     settingsButton.style.display = "none"
     document.getElementById(`${settings}QuestionForm`).style.display = "block"
+    if(settings == "edit"){
+        selectForm.style.display = "block"
+    }
+})
+
+editButton.addEventListener("click", addSelect())
+
+async function addSelect() {
+    const res = await fetch("http://localhost:3005/questions")
+    const data = await res.json()
+
+    data.forEach((question) => {
+        let option = document.createElement("option")
+        option.text = question.id
+        option.value = question.id
+        editSelect.add(option)
+    })
+}
+
+editSelect.addEventListener("change", async function(e) {
+    const response = await fetch(`http://localhost:3005/questions/${e.target.value}`)
+    const data = await response.json()
+
+    editForm.question.value = data.question
+    //unchecks everything
+    editForm.correct1.checked = false
+    editForm.correct2.checked = false
+    editForm.correct3.checked = false
+    editForm.correct4.checked = false
+
+    editForm.option1.value = data.options[0].option
+    editForm.option2.value = data.options[1].option
+    editForm.option3.value = data.options[2].option
+    editForm.option4.value = data.options[3].option
+
+    data.options.forEach(function(options, index) {
+        if(options.correct == true){
+           editForm.elements[`correct${index + 1}`].checked = true
+        }
+    })
+    
+    editForm.category.value = data.category
+    editForm.explanation.value = data.explanation
+
 })
 
 checkboxes.forEach(function(checkbox) {
