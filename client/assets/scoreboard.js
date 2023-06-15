@@ -1,6 +1,6 @@
 
 const scoreboardTable = document.getElementById("scoreboard");
-
+const backButtonElement = document.getElementById("button");
 async function fetchScores() {
     fetch("http://localhost:3005/scores")
         .then((response) => {
@@ -34,13 +34,11 @@ function addRow(playerName, score) {
     scoreboardTable.querySelector("tbody").appendChild(newRow);
 }
 
-const backButton = document.createElement("button");
-backButton.textContent = "Back to Home";
-backButton.setAttribute("id", "next-btn");
-backButton.addEventListener("click", () => {
+
+backButtonElement.addEventListener("click", () => {
     window.location.href = "../client/index.html";
 });
-document.body.appendChild(backButton);
+
 
 fetchScores();
 

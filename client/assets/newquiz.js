@@ -7,6 +7,7 @@ const difficultyButton = document.getElementById("buttons");
 const textElement = document.getElementById("text");
 const inputElement = document.getElementById("input");
 const submitElement = document.getElementById("submit");
+const levelElement = document.getElementById("level");
 
 
 let questionData = null;
@@ -16,7 +17,7 @@ let difficulty = "";
 let playerName = null;
 
 const backButton = document.createElement("button");
-backButton.textContent = "Back to Home";
+backButton.textContent = "BACK";
 backButton.setAttribute("id", "next-btn");
 backButton.addEventListener("click", () => {
     window.location.href = "../client/index.html";
@@ -88,10 +89,10 @@ const selectAnswer = (e) => {
     const selectedOption = currentQuestion.options[selectedOptionIndex];
 
     if (selectedOption.correct) {
-        selectedBtn.classList.add("correct"); // Adds green highlight styling
+        selectedBtn.classList.add("correct", "c-hover-disabled"); // Adds green highlight styling
         score++;
     } else {
-        selectedBtn.classList.add("incorrect"); // Adds red highlight styling
+        selectedBtn.classList.add("incorrect", "i-hover-disabled"); // Adds red highlight styling
     }
 
     const disableButtons = document.querySelectorAll("#answer-buttons button");
@@ -106,7 +107,8 @@ const selectAnswer = (e) => {
 const restartQuiz = () => {
     currentQuestionIndex = 0;
     score = 0;
-    difficultyButton.style.display = "block"
+    levelElement.style.display = "block";
+    difficultyButton.style.display = "block";
     playElement.innerHTML = "";
     resultElement.innerHTML = "";
     inputElement.innerHTML = "";
@@ -124,12 +126,12 @@ const nextBtn = () => {
     } else {
         resultElement.innerHTML = `You scored ${score} out of ${questionData.length}!`;
         const playButton = document.createElement("button");
-        playButton.textContent = "Play again?";
+        playButton.textContent = "RETRY";
         playButton.setAttribute("id", "next-btn");
         playElement.appendChild(playButton);
         playButton.style.display = "block"
 
-        textElement.innerHTML = `Would you like to submit your score?`;
+        textElement.innerHTML = `Submit your score below:`;
 
         const nameInput = document.createElement("input");
         nameInput.setAttribute("type", "text");
@@ -138,7 +140,7 @@ const nextBtn = () => {
         inputElement.appendChild(nameInput);
 
         const submitButton = document.createElement("button");
-        submitButton.textContent = "Submit";
+        submitButton.textContent = "SUBMIT";
         submitButton.setAttribute("id", "next-btn");
         submitElement.appendChild(submitButton);
 
@@ -155,6 +157,8 @@ const nextBtn = () => {
 const selectDifficulty = () => {
     nextButton.style.display = "block";
     difficultyButton.style.display = "none";
+    levelElement.style.display = "none";
+
     initQuiz();
 }
 

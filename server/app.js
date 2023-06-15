@@ -61,7 +61,8 @@ app.post("/scores", (req, res) => {
 });
 
 app.get("/scores", (req, res) => {
-    res.json(scores);
+    let sortedScores = scores.sort((a, b) => b.score - a.score);
+    res.json(sortedScores);
 });
 
 module.exports = app
