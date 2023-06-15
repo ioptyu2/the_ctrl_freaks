@@ -120,6 +120,7 @@ p {
     border: none;
     cursor: pointer;
     font-size: 18px;
+    font-weight: 520;
 }
 
 #easy:hover {
