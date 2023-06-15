@@ -3,54 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/homepage.css">
+    <link rel="stylesheet" href="./assets/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;500&display=swap" rel="stylesheet">
     <title>Add Question Form</title>
     <script src="assets/form.js" defer></script>
 </head>
 <body>
-    <form id="addQuestionForm">
-        <label for="question">Question:</label>
-        <input type="text" id="question" name="question" placeholder="Enter the question you want to add" required>
-    
-        <div class="option-group">
-            <label for="option1">Option 1:</label>
-            <input type="text" id="option1" name="option1" placeholder="Enter a potential answer for the question" required>
-            <input type="checkbox" id="correct1" name="correct1">
-            <label for="correct1">Check the correct answer</label>
+    <div class="app">
+        <h1>Add/remove/edit questions</h1>
+        <div id="buttons">
+            <button id="add">Add</button>
+            <button id="edit">Edit</button>
+            <button id="delete">Delete</button>
         </div>
-    
-        <div class="option-group">
-            <label for="option2">Option 2:</label>
-            <input type="text" id="option2" name="option2" placeholder="Enter a potential answer for the question" required>
-            <input type="checkbox" id="correct2" name="correct2">
-            <label for="correct2">Check the correct answer</label>
-        </div>
-    
-        <div class="option-group">
-            <label for="option3">Option 3:</label>
-            <input type="text" id="option3" name="option3" placeholder="Enter a potential answer for the question" required>
-            <input type="checkbox" id="correct3" name="correct3">
-            <label for="correct3">Check the correct answer</label>
-        </div>
-    
-        <div class="option-group">
-            <label for="option4">Option 4:</label>
-            <input type="text" id="option4" name="option4" placeholder="Enter a potential answer for the question" required>
-            <input type="checkbox" id="correct4" name="correct4">
-            <label for="correct4">Check the correct answer</label>
-        </div>
-    
-        <label for="category">Category:</label>
-        <select id="category" name="category" required>
-            <option value="" disabled selected>Please select a category</option>
-            <option value="easy">Easy</option>
-            <option value="intermediate">Intermediate</option>
-            <option value="hard">Hard</option>
-        </select>
-    
-        <label for="explanation">Explanation:</label>
-        <input type="text" id="explanation" name="explanation" placeholder="Enter an explanation for the correct answer" required>
-    
-        <button type="submit">Add Question</button>
-    </form>
+
+        <!-- add question form -->
+        <form id="addQuestionForm">
+            <label for="question">Question:</label>
+            <input type="text" id="question" name="question" placeholder="Enter the question you want to add" required>
+        
+            <div class="option-group">
+                <label for="option1">Option 1:</label>
+                <input type="text" id="option1" name="option1" placeholder="Enter a potential answer for the question" required>
+                <input type="checkbox" id="correct1" name="correct1">
+                <label for="correct1">Check the correct answer</label>
+            </div>
+        
+            <div class="option-group">
+                <label for="option2">Option 2:</label>
+                <input type="text" id="option2" name="option2" placeholder="Enter a potential answer for the question" required>
+                <input type="checkbox" id="correct2" name="correct2">
+                <label for="correct2">Check the correct answer</label>
+            </div>
+        
+            <div class="option-group">
+                <label for="option3">Option 3:</label>
+                <input type="text" id="option3" name="option3" placeholder="Enter a potential answer for the question" required>
+                <input type="checkbox" id="correct3" name="correct3">
+                <label for="correct3">Check the correct answer</label>
+            </div>
+        
+            <div class="option-group">
+                <label for="option4">Option 4:</label>
+                <input type="text" id="option4" name="option4" placeholder="Enter a potential answer for the question" required>
+                <input type="checkbox" id="correct4" name="correct4">
+                <label for="correct4">Check the correct answer</label>
+            </div>
+        
+            <label for="category">Category:</label>
+            <select id="category" name="category" required>
+                <option value="" disabled selected>Please select a category</option>
+                <option value="easy">Easy</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="hard">Hard</option>
+            </select>
+        
+            <label for="explanation">Explanation:</label>
+            <input type="text" id="explanation" name="explanation" placeholder="Enter an explanation for the correct answer" required>
+        
+            <button type="submit">Add Question</button>
+        </form>
+        <!-- add questions form ends -->
+
+        <!-- edit questions form starts -->
+
+
+        <!-- edit questions form ends -->
+
+        <!-- delete questions form starts -->
+
+
+        <!-- delete questions form ends -->
+    </div>
+
+
 </body>
 </html>  

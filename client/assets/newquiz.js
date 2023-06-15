@@ -54,13 +54,13 @@ const showQuestion = () => {
     resultElement.textContent = "";
     playElement.innerHTML = "";
     textElement.innerHTML = "";
-    // inputElement.innerHTML = "";
-    // submitElement.innerHTML = "";
+    inputElement.innerHTML = "";
+    submitElement.innerHTML = "";
 
     //Shows buttons again after play again
     questionElement.style.display = "block";
     answerElement.style.display = "block";
-    nextButton.style.display = "block"
+    nextButton.style.display = "block";
 
     // Adds current question
     const currentQuestion = questionData[currentQuestionIndex];
