@@ -1,7 +1,7 @@
 # the_ctrl_freaks
 # Geobyte
 ![Screenshot of Geobyte quiz homepage]
-(https://files.slack.com/files-pri/THYP60S66-F05CNKZ3399/screenshot_2023-06-15_at_10.33.21.png)
+(Geobyte_ss.png)
 
 ## Installation & Usage
 
@@ -31,7 +31,7 @@
     
     `async function fetchQuestions() {
     try {
-        const response = await fetch(`http://localhost:3005/questions/${difficulty}`);
+        const response = await fetch('http://localhost:3005/questions/${difficulty}');
         if (!response.ok) {
             console.log(`Error fetching JSON:`, response.status);
         }
