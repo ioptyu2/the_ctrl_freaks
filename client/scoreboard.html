@@ -5,15 +5,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,500;0,600;0,700;0,800;1,800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/scoreboard.css">
     <script src="./assets/scoreboard.js" defer></script>
     <title>Scoreboard</title>
 </head>
 
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="quiz.html">QUIZ</a></li>
+                <li><a href="scoreboard.html">SCOREBOARD</a></li>
+                <li><a href="scoreboard.html">SETTINGS</a></li>
 
-    <div id="scoreboard"></div>
+            </ul>
+        </nav>
+    </header>
 
+    <div id="title">
+        <h1>SCOREBOARD</h1>
 
+    </div>
+    <div id="table-container">
+        <table id="scoreboard">
+            <thead>
+                <tr>
+                    <th>RANK</th>
+                    <th>PLAYER</th>
+                    <th>SCORE</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div id="button-container">
+        <button id="button">BACK</button>
+    </div>
+
+    <script src="./assets/scoreboard.js" defer></script>
 </body>
 
 </html>

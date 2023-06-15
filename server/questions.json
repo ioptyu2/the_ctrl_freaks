@@ -431,30 +431,7 @@
         }
       ],
       "explanation": "Desalination is the process by which the dissolved mineral salts in seawater are removed, leaving freshwater."
-    },
-    {
-      "category": "easy",
-      "id": 19,
-      "question": "Example Question",
-      "options": [
-        {
-          "option": "a",
-          "correct": true
-        },
-        {
-          "option": "b",
-          "correct": false
-        },
-        {
-          "option": "c",
-          "correct": false
-        },
-        {
-          "option": "d",
-          "correct": false
-        }
-      ],
-      "explanation": "a is correct"
     }
+   
   ]
 }

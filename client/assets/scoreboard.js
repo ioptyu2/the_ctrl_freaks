@@ -1,9 +1,52 @@
-const scoreboardDiv = document.getElementById("scoreboard");
 
-const urlParams = new URLSearchParams(window.location.search);
-const playerName = urlParams.get("name");
-const score = urlParams.get("score");
+const scoreboardTable = document.getElementById("scoreboard");
+const backButtonElement = document.getElementById("button");
+let rank = 1;
 
-const playerScore = document.createElement("p");
-playerScore.textContent = `Player: ${playerName}, Score: ${score}`;
-scoreboardDiv.appendChild(playerScore);
+async function fetchScores() {
+    fetch("http://localhost:3005/scores")
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Error fetching scores");
+            }
+            return response.json();
+        })
+        .then((data) => {
+            data.forEach((scoreData) => {
+                addRow(scoreData.playerName, scoreData.score);
+            });
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+}
+
+
+function addRow(playerName, score) {
+    const newRow = document.createElement("tr");
+
+    const playerRankCell = document.createElement("td");
+    const playerNameCell = document.createElement("td");
+    const scoreCell = document.createElement("td");
+
+    playerRankCell.textContent = rank;
+    playerNameCell.textContent = playerName;
+    scoreCell.textContent = score;
+
+    newRow.appendChild(playerRankCell)
+    newRow.appendChild(playerNameCell);
+    newRow.appendChild(scoreCell);
+
+    scoreboardTable.querySelector("tbody").appendChild(newRow);
+
+    rank++
+}
+
+
+backButtonElement.addEventListener("click", () => {
+    window.location.href = "../client/index.html";
+});
+
+
+fetchScores();
+
