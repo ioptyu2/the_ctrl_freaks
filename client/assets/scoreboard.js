@@ -17,7 +17,7 @@ async function fetchScores() {
         })
         .then((data) => {
             if (data.length > 0) {
-                subtitleElement.style.visibility = "hidden";
+                subtitleElement.style.display = "none";
                 titleElement.style.visibility = "visible";
                 scoreboardTable.style.visibility = "visible";
 
