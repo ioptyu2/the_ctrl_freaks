@@ -1,7 +1,16 @@
 # the_ctrl_freaks
 # Geobyte
-![Screenshot of Geobyte quiz homepage]
-(https://raw.githubusercontent.com/ioptyu2/the_ctrl_freaks/dhiviya/Geobyte_ss.png)
+![Screenshot of Geobyte quiz homepage](https://raw.githubusercontent.com/ioptyu2/the_ctrl_freaks/dhiviya/Geobyte_ss.png)
+
+## Project Description
+Geobyte is an educational app which tests students on their geographic general knowledge. It targets Key Stage 3 and 4 students.
+
+### Key Features
+The app consists of the following features:
+* A homepage 
+* Quizzes of varying difficulty
+* A scoreboard which logs the results of a quiz if desired - this allows students to track their progress.
+* A settings page
 
 ## Installation & Usage
 
