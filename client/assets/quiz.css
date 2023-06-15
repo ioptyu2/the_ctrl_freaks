@@ -58,9 +58,9 @@ nav ul li:hover:after {
 .app {
     background: #293e11;
     width: 90%;
-    height: 600px;
+    height: 580px;
     max-width: 600px;
-    margin: 45px auto 0;
+    margin: 10px auto 0;
     border-radius: 10px;
     padding-top: 30px;
     padding-left: 30px;
@@ -120,18 +120,20 @@ p {
 }
 
 #next-btn {
-    display: flex;
-    justify-content: center;
     background: #a0591b;
     color: #fff;
     font-weight: 400;
     width: 150px;
     border: 0;
     padding: 12px 24px;
-    margin: 50px auto 30px;
+    margin: 30px auto 30px;
     border-radius: 4px;
     cursor: pointer;
     font-size: 18px;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2px;
 }
 
 .correct {
@@ -241,4 +243,26 @@ p {
 .i-hover-disabled:hover {
     background-color: #c8391d;
     color: #e4e3d9;
+}
+
+#explanation {
+    color: #e4e3d9;
+    padding: 30px;
+    text-align: center;
+
+}
+
+#retry-btn {
+    display: flex;
+    justify-content: center;
+    background: #a0591b;
+    color: #fff;
+    font-weight: 400;
+    width: 150px;
+    border: 0;
+    padding: 12px 24px;
+    margin: 30px auto 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
 }

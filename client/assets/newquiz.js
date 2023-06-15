@@ -16,14 +16,6 @@ let score = 0;
 let difficulty = "";
 let playerName = null;
 
-const backButton = document.createElement("button");
-backButton.textContent = "BACK";
-backButton.setAttribute("id", "next-btn");
-backButton.addEventListener("click", () => {
-    window.location.href = "../client/index.html";
-});
-document.body.appendChild(backButton);
-
 const getRandomSample = (array, count) => {
     const indices = [];
     const result = new Array(count);
@@ -87,12 +79,18 @@ const selectAnswer = (e) => {
     const selectedOptionIndex = parseInt(selectedBtn.dataset.index); // Uses index data attribute
     const currentQuestion = questionData[currentQuestionIndex];
     const selectedOption = currentQuestion.options[selectedOptionIndex];
+    const explanationElement = document.createElement("div");
+    explanationElement.setAttribute("id", "explanation");
 
     if (selectedOption.correct) {
         selectedBtn.classList.add("correct", "c-hover-disabled"); // Adds green highlight styling
+        explanationElement.textContent = `Correct! ${currentQuestion.explanation}`;
+        answerElement.appendChild(explanationElement);
         score++;
     } else {
         selectedBtn.classList.add("incorrect", "i-hover-disabled"); // Adds red highlight styling
+        explanationElement.textContent = `Incorrect. ${currentQuestion.explanation}`;
+        answerElement.appendChild(explanationElement);
     }
 
     const disableButtons = document.querySelectorAll("#answer-buttons button");
@@ -102,6 +100,7 @@ const selectAnswer = (e) => {
 
     const nextButton = document.getElementById("next-btn");
     nextButton.disabled = false;
+
 };
 
 const restartQuiz = () => {
@@ -127,7 +126,7 @@ const nextBtn = () => {
         resultElement.innerHTML = `You scored ${score} out of ${questionData.length}!`;
         const playButton = document.createElement("button");
         playButton.textContent = "RETRY";
-        playButton.setAttribute("id", "next-btn");
+        playButton.setAttribute("id", "retry-btn");
         playElement.appendChild(playButton);
         playButton.style.display = "block"
 
@@ -141,7 +140,7 @@ const nextBtn = () => {
 
         const submitButton = document.createElement("button");
         submitButton.textContent = "SUBMIT";
-        submitButton.setAttribute("id", "next-btn");
+        submitButton.setAttribute("id", "retry-btn");
         submitElement.appendChild(submitButton);
 
         submitButton.addEventListener("click", submitScore);
