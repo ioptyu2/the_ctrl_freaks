@@ -3,14 +3,11 @@ body {
     background-color: #e4e3d9;
 }
 
-header {
-    color: #333;
-    padding: 10px;
-}
-
 nav {
     display: flex;
     justify-content: center;
+    margin-right: 37px;
+    margin-top: 10px;
 }
 
 nav ul {
@@ -113,4 +110,8 @@ th {
 #button:hover {
     background-color: #315c00;
     transition: 0.5s;
+}
+
+#subtitle {
+    text-align: center;
 }
