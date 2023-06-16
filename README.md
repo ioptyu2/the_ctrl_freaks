@@ -17,11 +17,13 @@ The app consists of the following features:
 ### Installation
 * Open the terminal
 * Use git command `git clone` followed by the project URL 
-* Navigate to 'the_ctrl_freaks' directory
+* Navigate to 'the_ctrl_freaks/server' directory
 * In the terminal, install relevant packages with `npm install --save-dev` 
+* Navigate back to 'the_ctrl_freaks' directory
 * Use the git command `code .` to open in VS Code
 
 ### Usage
+* Navigate to 'the_ctrl_freaks/server' directory.
 * Use git command `npm run dev` to run server.
 * Open index.html with live server extension.
 
