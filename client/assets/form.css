@@ -1,0 +1,334 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #e4e3d9;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    margin-left: 2px;
+    margin-top: 10px;
+}
+
+nav ul {
+    margin-top: 20px;
+    list-style-type: none;
+}
+
+
+nav ul li a {
+    color: #283a14;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+nav ul li {
+    position: relative;
+    display: inline-block;
+}
+
+nav ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #a0591b;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+nav ul li:hover:after {
+    width: 100%;
+}
+
+.app {
+    background: #293e11;
+    width: 90%;
+    height: 500px;
+    max-width: 600px;
+    margin: 20px auto 0;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    overflow-y: auto;
+}
+
+.app h1 {
+    font-weight: 800;
+    border-bottom: 1px solid #e4e3d9;
+    padding-bottom: 30px;
+    text-align: center;
+    font-size: 30px;
+    font-style: italic;
+    color: #e4e3d9;
+}
+
+#buttons {
+    text-align: center;
+    margin-top: 40px;
+}
+
+#buttons button {
+    border-radius: 4px;
+    margin-top: 30px;
+    margin-right: 10px;
+    padding: 12px 24px;
+    background-color: #e4e3d9;
+    color: #18240b;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#back-button {
+    display: flex;
+    justify-content: center;
+    background: #a0591b;
+    color: #fff;
+    font-weight: 400;
+    width: 150px;
+    border: 0;
+    padding: 12px 24px;
+    margin: 30px auto 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2px;
+}
+
+#addQuestionForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #e4e3d9;
+    gap: 10px;
+}
+
+#addQuestionForm label {
+    margin-bottom: 23px !important;
+    margin-right: 20px !important;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#addQuestionForm input[type="text"],
+#addQuestionForm select {
+    width: 100%;
+    padding: 4px;
+    margin-bottom: 20px !important;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+#addQuestionForm input[type="text"]::placeholder {
+    font-size: 14px;
+    padding-top: 100px;
+}
+
+#addQuestionForm .option-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+#addQuestionForm .option-group input[type="text"] {
+    flex: 1;
+    margin-right: 6px;
+    padding: 4px;
+    font-size: 14px;
+}
+
+#addQuestionForm .option-group input[type="checkbox"],
+#addQuestionForm .option-group label {
+    margin-right: 16px;
+    font-size: 12px;
+}
+
+
+
+#addQuestionForm button[type="submit"] {
+    padding: 6px 12px;
+    background-color: #a0591b;
+    color: #fff;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-bottom: 30px;
+}
+
+#question {
+    margin-top: 20px !important;
+}
+
+#option1 {
+    margin-top: 20px !important;
+}
+
+#category {
+    margin-top: 20px !important;
+}
+
+#explanation {
+    margin-top: 20px !important;
+}
+
+#editSelectId {
+    margin-top: 20px !important;
+    width: 120px;
+    padding: 4px;
+    margin-bottom: 20px !important;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+#questionSelect {
+    margin-top: 20px !important;
+    width: 120px;
+    padding: 4px;
+    margin-bottom: 20px !important;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+#addQuestionForm .option-group input[type="checkbox"] {
+    margin-left: 30px;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+#correct1 {
+    margin-top: 19px;
+}
+
+input:focus {
+    outline: none;
+}
+
+#editQuestionForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #e4e3d9;
+    gap: 10px;
+}
+
+#editQuestionForm label {
+    margin-bottom: 23px !important;
+    margin-right: 20px !important;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#editQuestionForm input[type="text"],
+#editQuestionForm select {
+    width: 100%;
+    padding: 4px;
+    margin-bottom: 20px !important;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+#editQuestionForm input[type="text"]::placeholder {
+    font-size: 14px;
+    padding-top: 100px;
+}
+
+#editQuestionForm .option-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+#editQuestionForm .option-group input[type="text"] {
+    flex: 1;
+    margin-right: 6px;
+    padding: 4px;
+    font-size: 14px;
+}
+
+#editQuestionForm .option-group input[type="checkbox"],
+#editQuestionForm .option-group label {
+    margin-right: 16px;
+    font-size: 12px;
+}
+
+#editQuestionForm button[type="submit"] {
+    padding: 6px 12px;
+    background-color: #a0591b;
+    color: #fff;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-bottom: 30px;
+}
+
+#editQuestionForm .option-group input[type="checkbox"] {
+    margin-left: 30px;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+#selectForm {
+    text-align: center;
+    color: #e4e3d9;
+    margin: 20px 0;
+}
+
+#deleteQuestionForm {
+    text-align: center;
+    color: #e4e3d9;
+    margin: 20px 0;
+}
+
+#deleteButton {
+    padding: 6px 12px;
+    background-color: #a0591b;
+    color: #fff;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-bottom: 30px;
+}
